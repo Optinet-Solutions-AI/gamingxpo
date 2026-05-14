@@ -1,15 +1,19 @@
 ---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 const { title = 'Gamingxpo' } = Astro.props;
 ---
 <!doctype html>
-<html lang="en" class="bg-neutral-950">
+<html lang="en" class="bg-bg">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
-  <body class="font-sans antialiased">
+  <body class="font-sans antialiased bg-bg text-fg">
+    <Nav />
     <slot />
+    <Footer />
   </body>
 </html>

@@ -1,0 +1,15 @@
+---
+const { slug, title, event, year, src_base, alt } = Astro.props;
+---
+<a href={`/portfolio/${slug}`} class="group block">
+  <div class="aspect-[4/3] overflow-hidden bg-line">
+    <picture>
+      <source type="image/avif" srcset={`${src_base}/640.avif 640w, ${src_base}/960.avif 960w, ${src_base}/1440.avif 1440w`} sizes="(min-width: 768px) 33vw, 100vw" />
+      <img src={`${src_base}/960.webp`} alt={alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+    </picture>
+  </div>
+  <div class="pt-4">
+    <div class="text-xs text-muted uppercase tracking-widest">{event ?? '—'} · {year ?? ''}</div>
+    <div class="text-display-md font-display mt-1 group-hover:text-accent transition-colors">{title ?? alt}</div>
+  </div>
+</a>

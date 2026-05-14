@@ -1,0 +1,18 @@
+---
+const { items = [
+  { value: '200+', label: 'booths built' },
+  { value: '14', label: 'countries' },
+  { value: '9', label: 'years' },
+  { value: '40+', label: 'iGaming clients' },
+] } = Astro.props;
+---
+<section class="border-y border-line">
+  <div class="max-w-layout mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
+    {items.map((i: { value: string; label: string }) => (
+      <div>
+        <div class="font-display text-display-md text-accent">{i.value}</div>
+        <div class="text-muted text-sm mt-1">{i.label}</div>
+      </div>
+    ))}
+  </div>
+</section>

@@ -1,0 +1,8 @@
+---
+const { eyebrow, title, kicker } = Astro.props;
+---
+<header class="max-w-layout mx-auto px-6 py-section">
+  {eyebrow && <p class="text-accent text-sm tracking-[0.2em] uppercase">{eyebrow}</p>}
+  <h2 class="font-display text-display-lg mt-3 max-w-[18ch]">{title}</h2>
+  {kicker && <p class="mt-4 max-w-prose text-body text-fg/80">{kicker}</p>}
+</header>

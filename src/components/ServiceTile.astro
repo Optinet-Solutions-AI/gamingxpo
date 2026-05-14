@@ -1,0 +1,13 @@
+---
+const { title, blurb, src_base, alt, href } = Astro.props;
+---
+<a href={href ?? '/services'} class="group block border border-line p-6 hover:border-accent transition-colors">
+  {src_base && (
+    <div class="aspect-[16/10] overflow-hidden bg-bg mb-6">
+      <img src={`${src_base}/960.webp`} alt={alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+    </div>
+  )}
+  <div class="font-display text-display-md">{title}</div>
+  <p class="text-muted mt-2 max-w-prose">{blurb}</p>
+  <span class="inline-block mt-4 text-accent text-sm">Learn more →</span>
+</a>

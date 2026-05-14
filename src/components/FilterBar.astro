@@ -1,0 +1,50 @@
+---
+const { groups = [] } = Astro.props;
+---
+<div class="border-b border-line">
+  <div class="max-w-layout mx-auto px-6 py-6 flex flex-wrap gap-6" data-filter-bar>
+    {groups.map((g: { name: string; key: string; options: string[] }) => (
+      <div class="flex flex-wrap gap-2 items-center">
+        <span class="text-xs uppercase tracking-widest text-muted">{g.name}:</span>
+        <button data-filter-key={g.key} data-filter-value="*" class="filter-chip is-active">All</button>
+        {g.options.map((o: string) => (
+          <button data-filter-key={g.key} data-filter-value={o} class="filter-chip">{o}</button>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style is:global>
+  .filter-chip { @apply text-sm px-3 py-1 rounded-full border border-line text-fg/80 hover:border-accent transition; }
+  .filter-chip.is-active { @apply bg-accent text-bg border-accent; }
+</style>
+
+<script>
+  const bar = document.querySelector('[data-filter-bar]') as HTMLElement | null;
+  if (bar) {
+    const state: Record<string, string> = {};
+    bar.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('[data-filter-key]') as HTMLElement | null;
+      if (!btn) return;
+      const key = btn.dataset.filterKey!;
+      const value = btn.dataset.filterValue!;
+      state[key] = value;
+      bar.querySelectorAll(`[data-filter-key="${key}"]`).forEach(b => b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      try { localStorage.setItem('gx_filters', JSON.stringify(state)); } catch {}
+      document.querySelectorAll('[data-card]').forEach(card => {
+        const el = card as HTMLElement;
+        const visible = Object.entries(state).every(([k, v]) => v === '*' || el.dataset[k] === v);
+        el.style.display = visible ? '' : 'none';
+      });
+    });
+    try {
+      const saved = JSON.parse(localStorage.getItem('gx_filters') || '{}');
+      for (const [k, v] of Object.entries(saved)) {
+        const btn = bar.querySelector(`[data-filter-key="${k}"][data-filter-value="${v}"]`) as HTMLElement | null;
+        btn?.click();
+      }
+    } catch {}
+  }
+</script>
