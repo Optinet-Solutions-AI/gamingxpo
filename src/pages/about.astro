@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import MetricStrip from '../components/MetricStrip.astro';
+import MarqueeBrands from '../components/MarqueeBrands.astro';
+import ContactSplit from '../components/ContactSplit.astro';
+import portfolio from '../data/portfolio.json';
+
+const cover = portfolio.find(p => p.quality === 'portfolio_grade') ?? portfolio[0];
+---
+<Base title="About — Gamingxpo">
+  <SectionHeader eyebrow="About" title="A booth builder for the iGaming era." kicker="We started building stands for a Portuguese trade-show audience. Today we ship booths to wherever iGaming pitches its tent: Malta, London, Las Vegas, São Paulo, Cape Town." />
+
+  {cover && (
+    <div class="max-w-layout mx-auto px-6">
+      <picture>
+        <source type="image/avif" srcset={`${cover.src_base}/1920.avif`} />
+        <img src={`${cover.src_base}/1920.webp`} alt={cover.alt} class="w-full aspect-[21/9] object-cover" loading="lazy" />
+      </picture>
+    </div>
+  )}
+
+  <MetricStrip />
+
+  <div class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-12 gap-8">
+    <aside class="md:col-span-4">
+      <p class="text-accent text-sm tracking-[0.2em] uppercase">Why us</p>
+    </aside>
+    <div class="md:col-span-8 max-w-prose space-y-6 text-fg/80 text-body">
+      <p>The iGaming industry runs on a calendar of events. Operators that show up sharp at SiGMA, ICE, and G2E close deals. Ones that don't, disappear into the noise.</p>
+      <p>We take that calendar seriously. Every booth we build is designed for the specific event — the booth that wins at SiGMA Malta is not the booth that wins at G2E Las Vegas. We know the difference, we know the halls, and we know the audience.</p>
+      <p>We own the build end-to-end: design, fabrication, AV, branding, on-site crew. One vendor, one accountable lead, one budget. No subcontractor chains.</p>
+    </div>
+  </div>
+
+  <MarqueeBrands />
+  <ContactSplit />
+</Base>

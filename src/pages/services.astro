@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ContactSplit from '../components/ContactSplit.astro';
+import { getCollection } from 'astro:content';
+
+const services = await getCollection('services');
+---
+<Base title="Services — Gamingxpo">
+  <SectionHeader eyebrow="Services" title="From concept to teardown." kicker="Five disciplines. One in-house team. Every booth shipped on the date written on the contract." />
+
+  <div class="max-w-layout mx-auto px-6 space-y-section pb-section">
+    {services.map(async (s) => {
+      const { Content } = await s.render();
+      return (
+        <article id={s.slug} class="grid md:grid-cols-12 gap-8 border-t border-line pt-12 scroll-mt-24">
+          <div class="md:col-span-4">
+            <p class="text-accent text-sm tracking-[0.2em] uppercase">{s.data.title}</p>
+          </div>
+          <div class="md:col-span-8 max-w-prose">
+            <h2 class="font-display text-display-lg">{s.data.intro}</h2>
+            <div class="mt-6 prose prose-invert text-fg/80"><Content /></div>
+            <ul class="mt-6 grid grid-cols-2 gap-2 text-sm text-muted">
+              {s.data.deliverables.map((d: string) => <li>· {d}</li>)}
+            </ul>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+
+  <ContactSplit />
+</Base>

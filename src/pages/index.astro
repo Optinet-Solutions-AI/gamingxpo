@@ -1,8 +1,39 @@
 ---
 import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import MetricStrip from '../components/MetricStrip.astro';
+import MarqueeBrands from '../components/MarqueeBrands.astro';
+import CaseCard from '../components/CaseCard.astro';
+import ServiceTile from '../components/ServiceTile.astro';
+import ContactSplit from '../components/ContactSplit.astro';
+import { getCollection } from 'astro:content';
+import portfolio from '../data/portfolio.json';
+
+const services = await getCollection('services');
+const featured = portfolio.filter(p => p.quality === 'portfolio_grade').slice(0, 6);
+const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 ---
-<Base title="Gamingxpo — Coming soon">
-  <main class="min-h-screen flex items-center justify-center bg-neutral-950 text-neutral-100">
-    <h1 class="text-4xl font-semibold tracking-tight">Gamingxpo.com</h1>
-  </main>
+<Base title="Gamingxpo — Booths & Stands for iGaming">
+  <Hero />
+  <MetricStrip />
+
+  <SectionHeader eyebrow="Selected work" title="Booths that earn the room." kicker="A small sample. Every booth we've built was custom-designed for the event, the brand, and the crowd in front of it." />
+  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {featured.map(p => <CaseCard {...p} title={titleCase(p.subject)} event="iGaming event" year={2025} />)}
+  </div>
+
+  <div class="max-w-layout mx-auto px-6 mt-section text-center">
+    <a href="/portfolio" class="inline-flex items-center gap-2 border border-line text-fg px-6 py-3 rounded-full hover:border-accent transition">See all projects →</a>
+  </div>
+
+  <SectionHeader eyebrow="What we do" title="Five things, done end-to-end." kicker="From the first concept sketch to the moment our crew packs up after the show." />
+  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-3 gap-8">
+    {services.slice(0,5).map(s => (
+      <ServiceTile title={s.data.title} blurb={s.data.intro} href={`/services#${s.slug}`} />
+    ))}
+  </div>
+
+  <MarqueeBrands />
+  <ContactSplit />
 </Base>
