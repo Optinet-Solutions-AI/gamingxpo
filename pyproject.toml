@@ -11,10 +11,10 @@ dependencies = [
   "google-genai>=0.3",
   "python-dotenv>=1.0",
   "rich>=13.7",
+  "opencv-python>=4.10",
 ]
 
 [project.optional-dependencies]
-inpaint = ["iopaint>=1.4"]
 test    = ["pytest>=8.0", "pytest-mock>=3.12"]
 
 [tool.pytest.ini_options]
