@@ -1,0 +1,24 @@
+---
+const {
+  title = 'Gamingxpo',
+  description = 'Premium booths and stands for the iGaming sector, worldwide.',
+  image = '/images/brand/og-default.jpg',
+  url = Astro.url.href,
+} = Astro.props;
+const siteUrl = (Astro.site?.href ?? import.meta.env.PUBLIC_SITE_URL ?? 'https://gamingxpo.com').replace(/\/$/, '');
+const fullImg = image.startsWith('http') ? image : `${siteUrl}${image}`;
+const canonical = url || siteUrl;
+---
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImg} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Gamingxpo" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={fullImg} />
+<link rel="canonical" href={canonical} />

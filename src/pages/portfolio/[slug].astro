@@ -15,7 +15,7 @@ const { item } = Astro.props;
 const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 const others = portfolio.filter(p => p.slug !== item.slug && p.quality === 'portfolio_grade').slice(0, 3);
 ---
-<Base title={`${titleCase(item.subject)} — Gamingxpo Portfolio`}>
+<Base title={`${titleCase(item.subject)} — Gamingxpo Portfolio`} description={`${titleCase(item.subject)} — a custom iGaming event booth designed and built end-to-end by Gamingxpo.`} ogImage={`${item.src_base}/1920.webp`}>
   <section class="relative isolate min-h-[70vh] overflow-hidden">
     <picture class="absolute inset-0">
       <source type="image/avif" srcset={`${item.src_base}/1920.avif`} />

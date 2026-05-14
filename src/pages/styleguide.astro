@@ -12,7 +12,10 @@ import portfolio from '../data/portfolio.json';
 
 const sample = portfolio[0];
 const grade = portfolio.filter(p => p.quality === 'portfolio_grade');
+const isProd = import.meta.env.PROD;
 ---
+{isProd && <meta http-equiv="refresh" content="0;url=/" />}
+{!isProd && (
 <Base title="Styleguide">
   <Hero />
   <MetricStrip />
@@ -33,3 +36,4 @@ const grade = portfolio.filter(p => p.quality === 'portfolio_grade');
   ]} />
   <ContactSplit />
 </Base>
+)}
