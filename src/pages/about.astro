@@ -4,6 +4,7 @@ import SectionHeader from '../components/SectionHeader.astro';
 import MetricStrip from '../components/MetricStrip.astro';
 import MarqueeBrands from '../components/MarqueeBrands.astro';
 import ContactSplit from '../components/ContactSplit.astro';
+import Team from '../components/Team.astro';
 import portfolio from '../data/portfolio.json';
 
 const cover = portfolio.find(p => p.quality === 'portfolio_grade') ?? portfolio[0];
@@ -15,24 +16,49 @@ const cover = portfolio.find(p => p.quality === 'portfolio_grade') ?? portfolio[
     <div class="max-w-layout mx-auto px-6">
       <picture>
         <source type="image/avif" srcset={`${cover.src_base}/1920.avif`} />
-        <img src={`${cover.src_base}/1920.webp`} alt={cover.alt} class="w-full aspect-[21/9] object-cover" loading="lazy" />
+        <img src={`${cover.src_base}/1920.webp`} alt={cover.alt} class="w-full aspect-[21/9] object-cover rounded-2xl" loading="lazy" />
       </picture>
     </div>
   )}
 
   <MetricStrip />
 
-  <div class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-12 gap-8">
-    <aside class="md:col-span-4">
-      <p class="text-accent text-sm tracking-[0.2em] uppercase">Why us</p>
-    </aside>
-    <div class="md:col-span-8 max-w-prose space-y-6 text-fg/80 text-body">
-      <p>The iGaming industry runs on a calendar of events. Operators that show up sharp at SiGMA, ICE, and G2E close deals. Ones that don't, disappear into the noise.</p>
-      <p>We take that calendar seriously. Every booth we build is designed for the specific event — the booth that wins at SiGMA Malta is not the booth that wins at G2E Las Vegas. We know the difference, we know the halls, and we know the audience.</p>
-      <p>We own the build end-to-end: design, fabrication, AV, branding, on-site crew. One vendor, one accountable lead, one budget. No subcontractor chains.</p>
+  <section class="bg-bg-alt border-y border-line">
+    <div class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-12 gap-8 lg:gap-16">
+      <aside class="md:col-span-4">
+        <p class="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase font-medium text-fg/70">
+          <span class="w-6 h-px bg-accent"></span>
+          Why us
+        </p>
+      </aside>
+      <div class="md:col-span-8 max-w-prose space-y-6 text-fg/80 text-body">
+        <p>
+          Gamingxpo started in 2016 as a small workshop in Lisbon, building trade-show stands
+          for Portuguese clients. The pivot to iGaming came in 2019, when a regional operator
+          we'd built for asked us to follow them to SiGMA Malta. We did. They came back next
+          year. So did three of the other operators we met on that floor.
+        </p>
+        <p>
+          Today we ship booths to wherever iGaming pitches its tent: SiGMA Malta, SiGMA Europe,
+          ICE London, G2E Las Vegas, BiS SiGMA, SBC Summit. The same in-house team designs
+          every project, builds every joint in our Lisbon workshop, freights it, and assembles
+          it on-site. One vendor. One named lead. One invoice.
+        </p>
+        <p>
+          The iGaming events calendar is an arms race. Operators that show up sharp at the
+          right shows close deals. Operators that don't disappear into the noise. We take that
+          calendar seriously — every booth we build is designed for the specific event, the
+          specific hall, and the specific crowd in front of it. The booth that wins at SiGMA
+          Malta is not the booth that wins at G2E. We know the difference.
+        </p>
+        <p class="text-ink font-medium pt-4 border-l-2 border-accent pl-5">
+          Built like a product, not a pop-up.
+        </p>
+      </div>
     </div>
-  </div>
+  </section>
 
+  <Team />
   <MarqueeBrands />
   <ContactSplit />
 </Base>
