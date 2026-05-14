@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html, body { @apply bg-bg text-fg font-sans antialiased; }
+  h1, h2, h3, h4 { @apply font-display tracking-tight; }
+  ::selection { background: var(--accent); color: var(--bg); }
+}
+
 :root {
   --bg: #0A0A0B;
   --fg: #F5F4F1;
   --accent: #E6FF3D;
 }
-
-html, body { background: var(--bg); color: var(--fg); }
