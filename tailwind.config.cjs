@@ -24,5 +24,5 @@ module.exports = {
       spacing: { section: '6rem', 'section-sm': '3rem' },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 };
