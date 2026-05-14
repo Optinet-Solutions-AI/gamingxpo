@@ -1,0 +1,37 @@
+---
+const { email = 'hello@gamingxpo.com', whatsapp = '+351000000000' } = Astro.props;
+---
+<section class="border-t border-line">
+  <div class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="font-display text-display-lg">Tell us about your event.</h2>
+      <p class="mt-4 max-w-prose text-fg/80">We'll come back with a concept, a render, and a budget — usually within 48 hours.</p>
+      <ul class="mt-8 space-y-2 text-fg/80">
+        <li>Email: <a href={`mailto:${email}`} class="text-accent">{email}</a></li>
+        <li>WhatsApp: <a href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`} class="text-accent">{whatsapp}</a></li>
+      </ul>
+    </div>
+    <form class="space-y-4" data-mockup-form>
+      <input class="w-full bg-bg border border-line px-4 py-3" placeholder="Your name" name="name" required />
+      <input class="w-full bg-bg border border-line px-4 py-3" placeholder="Company" name="company" />
+      <input class="w-full bg-bg border border-line px-4 py-3" placeholder="Email" type="email" name="email" required />
+      <select class="w-full bg-bg border border-line px-4 py-3" name="event">
+        <option value="">Event (optional)</option>
+        <option>SiGMA Malta</option><option>SiGMA Europe</option><option>ICE London</option>
+        <option>G2E Las Vegas</option><option>BiS SiGMA</option><option>Other</option>
+      </select>
+      <textarea class="w-full bg-bg border border-line px-4 py-3 h-32" placeholder="Project notes (size, dates, references)" name="notes"></textarea>
+      <button class="bg-accent text-bg font-medium px-6 py-3 rounded-full hover:opacity-90 transition">Send (mockup)</button>
+      <p class="text-xs text-muted">This form is a placeholder — a real backend lands in a later milestone.</p>
+    </form>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-mockup-form]').forEach(f => {
+    f.addEventListener('submit', e => {
+      e.preventDefault();
+      (f as HTMLElement).innerHTML = '<div class="text-display-md font-display text-accent">Thanks — we\'ll be in touch.</div><p class="text-muted mt-2">(Mock success: no message was sent.)</p>';
+    });
+  });
+</script>

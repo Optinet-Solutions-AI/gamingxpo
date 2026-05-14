@@ -1,0 +1,23 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+const current = Astro.url.pathname;
+---
+<nav class="sticky top-0 z-50 bg-bg/85 backdrop-blur border-b border-line">
+  <div class="max-w-layout mx-auto flex items-center justify-between px-6 py-5">
+    <a href="/" class="font-display text-xl tracking-tight">Gamingxpo<span class="text-accent">.</span></a>
+    <ul class="hidden md:flex gap-8 text-sm">
+      {links.map(l => (
+        <li>
+          <a href={l.href} class={`hover:text-accent transition-colors ${current === l.href ? 'text-accent' : 'text-fg/80'}`}>{l.label}</a>
+        </li>
+      ))}
+    </ul>
+    <a href="/contact" class="hidden md:inline-flex items-center gap-2 bg-accent text-bg font-medium px-4 py-2 rounded-full text-sm hover:opacity-90 transition">Start a project →</a>
+  </div>
+</nav>

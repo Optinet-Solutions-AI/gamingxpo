@@ -1,0 +1,17 @@
+---
+const { items = ['SiGMA','ICE London','G2E Las Vegas','BiS SiGMA','GAT Expo','iGaming Next','SBC Summit'] } = Astro.props;
+---
+<section class="overflow-hidden border-y border-line">
+  <div class="flex gap-16 py-8 whitespace-nowrap motion-safe:animate-[marquee_30s_linear_infinite]">
+    {[...items, ...items].map(name => (
+      <span class="font-display text-2xl text-muted hover:text-fg transition-colors">{name}</span>
+    ))}
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>
