@@ -1,8 +1,14 @@
 ---
-const { eyebrow, title, kicker } = Astro.props;
+const { eyebrow, title, kicker, align = 'left' } = Astro.props;
+const alignClass = align === 'center' ? 'text-center mx-auto' : '';
 ---
-<header class="max-w-layout mx-auto px-6 py-section">
-  {eyebrow && <p class="text-accent text-sm tracking-[0.2em] uppercase">{eyebrow}</p>}
-  <h2 class="font-display text-display-lg mt-3 max-w-[18ch]">{title}</h2>
-  {kicker && <p class="mt-4 max-w-prose text-body text-fg/80">{kicker}</p>}
+<header class={`max-w-layout mx-auto px-6 pt-section pb-12 ${alignClass}`}>
+  {eyebrow && (
+    <p class="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase font-medium text-fg/70">
+      <span class="w-6 h-px bg-accent"></span>
+      {eyebrow}
+    </p>
+  )}
+  <h2 class="font-display text-display-lg mt-4 max-w-[20ch] text-ink">{title}</h2>
+  {kicker && <p class="mt-5 max-w-prose text-body text-fg/70">{kicker}</p>}
 </header>

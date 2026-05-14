@@ -18,11 +18,16 @@
 @layer base {
   html, body { @apply bg-bg text-fg font-sans antialiased; }
   h1, h2, h3, h4 { @apply font-display tracking-tight; }
-  ::selection { background: var(--accent); color: var(--bg); }
+  ::selection { background: var(--accent); color: var(--ink); }
 }
 
 :root {
-  --bg: #0A0A0B;
-  --fg: #F5F4F1;
-  --accent: #E6FF3D;
+  --bg: #F7F4EF;
+  --bg-alt: #FFFFFF;
+  --bg-deep: #1F1A14;
+  --fg: #14110D;
+  --accent: #F5C84B;
+  --ink: #1A1A1A;
+  --pop: #E6FF3D;
+  --coral: #E66B3D;
 }

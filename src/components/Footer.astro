@@ -1,24 +1,37 @@
 ---
+import Logo from './Logo.astro';
 const year = new Date().getFullYear();
 ---
-<footer class="border-t border-line mt-section">
-  <div class="max-w-layout mx-auto px-6 py-12 grid md:grid-cols-3 gap-8 text-sm text-muted">
-    <div>
-      <div class="font-display text-fg text-lg">Gamingxpo<span class="text-accent">.</span></div>
-      <p class="mt-2 max-w-prose">Premium booths and stands for the iGaming sector, worldwide.</p>
+<footer class="bg-bg-deep text-bg mt-section">
+  <div class="max-w-layout mx-auto px-6 py-16 grid md:grid-cols-4 gap-8">
+    <div class="md:col-span-2">
+      <div class="text-bg">
+        <Logo size={32} />
+      </div>
+      <p class="mt-4 max-w-prose text-bg/65 text-sm">
+        Premium booths and stands for the iGaming sector, worldwide.
+        Design, build, branding, AV, on-site — all under one roof.
+      </p>
     </div>
     <div>
-      <div class="text-fg font-medium">Contact</div>
-      <p class="mt-2">hello@gamingxpo.com</p>
-      <p>+351 — TBD</p>
+      <div class="text-accent text-xs tracking-[0.25em] uppercase font-medium">Contact</div>
+      <ul class="mt-4 space-y-1.5 text-sm text-bg/85">
+        <li><a href="mailto:hello@gamingxpo.com" class="hover:text-accent transition-colors">hello@gamingxpo.com</a></li>
+        <li>+351 — TBD</li>
+        <li>Lisbon · Portugal</li>
+      </ul>
     </div>
     <div>
-      <div class="text-fg font-medium">Follow</div>
-      <p class="mt-2"><a href="https://www.instagram.com/pavilhao_3" class="hover:text-accent">Instagram</a></p>
+      <div class="text-accent text-xs tracking-[0.25em] uppercase font-medium">Follow</div>
+      <ul class="mt-4 space-y-1.5 text-sm text-bg/85">
+        <li><a href="https://www.instagram.com/pavilhao_3" class="hover:text-accent transition-colors">Instagram</a></li>
+        <li><a href="/portfolio" class="hover:text-accent transition-colors">Portfolio</a></li>
+        <li><a href="/about" class="hover:text-accent transition-colors">About us</a></li>
+      </ul>
     </div>
   </div>
-  <div class="border-t border-line">
-    <div class="max-w-layout mx-auto px-6 py-4 flex justify-between text-xs text-muted">
+  <div class="border-t border-bg/10">
+    <div class="max-w-layout mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between text-xs text-bg/55 gap-2">
       <span>© {year} Gamingxpo. All rights reserved.</span>
       <span>Site by Gamingxpo</span>
     </div>

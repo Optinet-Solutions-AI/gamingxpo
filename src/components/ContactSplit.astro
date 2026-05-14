@@ -1,28 +1,55 @@
 ---
 const { email = 'hello@gamingxpo.com', whatsapp = '+351000000000' } = Astro.props;
 ---
-<section class="border-t border-line">
-  <div class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-2 gap-12">
+<section class="bg-bg-alt border-t border-line">
+  <div class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-2 gap-12 lg:gap-20">
     <div>
-      <h2 class="font-display text-display-lg">Tell us about your event.</h2>
-      <p class="mt-4 max-w-prose text-fg/80">We'll come back with a concept, a render, and a budget — usually within 48 hours.</p>
-      <ul class="mt-8 space-y-2 text-fg/80">
-        <li>Email: <a href={`mailto:${email}`} class="text-accent">{email}</a></li>
-        <li>WhatsApp: <a href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`} class="text-accent">{whatsapp}</a></li>
+      <p class="text-accent text-xs tracking-[0.25em] uppercase font-medium">Get in touch</p>
+      <h2 class="font-display text-display-lg mt-3">Tell us about your event.</h2>
+      <p class="mt-5 max-w-prose text-fg/75 text-body">
+        We'll come back with a concept, a render, and a budget — usually within 48 hours.
+        No agency runaround, no junior account handlers.
+      </p>
+      <ul class="mt-10 space-y-3 text-fg">
+        <li class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-full bg-bg flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 3l6 4 6-4M1 3v8h12V3M1 3h12" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <a href={`mailto:${email}`} class="hover:text-ink transition-colors">{email}</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-full bg-bg flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3.5C2 2.67 2.67 2 3.5 2H4l1.5 3-1 1c.85 1.85 2 3 3.85 3.85l1-1L12.5 10v0.5c0 0.83-0.67 1.5-1.5 1.5h-1A8 8 0 012 4V3.5z" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <a href={`https://wa.me/${whatsapp.replace(/[^0-9]/g, '')}`} class="hover:text-ink transition-colors">WhatsApp: {whatsapp}</a>
+        </li>
+        <li class="flex items-center gap-3">
+          <span class="w-8 h-8 rounded-full bg-bg flex items-center justify-center shrink-0">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3 4.5 6.5 4.5 6.5s4.5-3.5 4.5-6.5c0-2.5-2-4.5-4.5-4.5z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/><circle cx="7" cy="6" r="1.5" stroke="currentColor" stroke-width="1.3"/></svg>
+          </span>
+          <span>Lisbon · Portugal — booths ship worldwide</span>
+        </li>
       </ul>
     </div>
-    <form class="space-y-4" data-mockup-form>
-      <input class="w-full bg-bg border border-line px-4 py-3" placeholder="Your name" name="name" required />
-      <input class="w-full bg-bg border border-line px-4 py-3" placeholder="Company" name="company" />
-      <input class="w-full bg-bg border border-line px-4 py-3" placeholder="Email" type="email" name="email" required />
-      <select class="w-full bg-bg border border-line px-4 py-3" name="event">
+    <form class="space-y-3" data-mockup-form>
+      <div class="grid sm:grid-cols-2 gap-3">
+        <input class="w-full bg-bg border border-line rounded-md px-4 py-3 text-fg placeholder:text-muted focus:outline-none focus:border-ink transition" placeholder="Your name" name="name" required />
+        <input class="w-full bg-bg border border-line rounded-md px-4 py-3 text-fg placeholder:text-muted focus:outline-none focus:border-ink transition" placeholder="Company" name="company" />
+      </div>
+      <input class="w-full bg-bg border border-line rounded-md px-4 py-3 text-fg placeholder:text-muted focus:outline-none focus:border-ink transition" placeholder="Email" type="email" name="email" required />
+      <select class="w-full bg-bg border border-line rounded-md px-4 py-3 text-fg focus:outline-none focus:border-ink transition" name="event">
         <option value="">Event (optional)</option>
         <option>SiGMA Malta</option><option>SiGMA Europe</option><option>ICE London</option>
-        <option>G2E Las Vegas</option><option>BiS SiGMA</option><option>Other</option>
+        <option>G2E Las Vegas</option><option>BiS SiGMA</option><option>SBC Summit</option><option>Other</option>
       </select>
-      <textarea class="w-full bg-bg border border-line px-4 py-3 h-32" placeholder="Project notes (size, dates, references)" name="notes"></textarea>
-      <button class="bg-accent text-bg font-medium px-6 py-3 rounded-full hover:opacity-90 transition">Send (mockup)</button>
-      <p class="text-xs text-muted">This form is a placeholder — a real backend lands in a later milestone.</p>
+      <textarea class="w-full bg-bg border border-line rounded-md px-4 py-3 h-32 text-fg placeholder:text-muted focus:outline-none focus:border-ink transition" placeholder="Project notes (booth size, dates, references)" name="notes"></textarea>
+      <div class="flex items-center justify-between gap-4 pt-1">
+        <p class="text-xs text-muted">Placeholder form — backend lands next milestone.</p>
+        <button class="inline-flex items-center gap-2 bg-ink text-bg font-medium px-6 py-3 rounded-full hover:bg-fg transition-colors">
+          Send brief
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </div>
     </form>
   </div>
 </section>
@@ -31,7 +58,7 @@ const { email = 'hello@gamingxpo.com', whatsapp = '+351000000000' } = Astro.prop
   document.querySelectorAll('[data-mockup-form]').forEach(f => {
     f.addEventListener('submit', e => {
       e.preventDefault();
-      (f as HTMLElement).innerHTML = '<div class="text-display-md font-display text-accent">Thanks — we\'ll be in touch.</div><p class="text-muted mt-2">(Mock success: no message was sent.)</p>';
+      (f as HTMLElement).innerHTML = '<div class="bg-bg rounded-2xl p-8 text-center"><div class="text-display-md font-display text-ink">Thanks — we\'ll be in touch.</div><p class="text-muted mt-3 text-sm">(Mock success: no message was sent. Real backend ships next milestone.)</p></div>';
     });
   });
 </script>

@@ -13,45 +13,71 @@ export function getStaticPaths() {
 
 const { item } = Astro.props;
 const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-const others = portfolio.filter(p => p.slug !== item.slug && p.quality === 'portfolio_grade').slice(0, 3);
+const others = portfolio.filter(p => p.slug !== item.slug && p.quality === 'portfolio_grade' && p.subject !== 'other').slice(0, 3);
 ---
 <Base title={`${titleCase(item.subject)} — Gamingxpo Portfolio`} description={`${titleCase(item.subject)} — a custom iGaming event booth designed and built end-to-end by Gamingxpo.`} ogImage={`${item.src_base}/1920.webp`}>
-  <section class="relative isolate min-h-[70vh] overflow-hidden">
-    <picture class="absolute inset-0">
-      <source type="image/avif" srcset={`${item.src_base}/1920.avif`} />
-      <img src={`${item.src_base}/1920.webp`} alt={item.alt} class="w-full h-full object-cover" />
-    </picture>
-    <div class="absolute inset-0 bg-gradient-to-b from-bg/30 via-bg/40 to-bg" />
-    <div class="relative max-w-layout mx-auto px-6 pt-32 pb-24 flex flex-col justify-end min-h-[70vh]">
-      <p class="text-accent text-sm tracking-[0.2em] uppercase">Case study</p>
-      <h1 class="font-display text-display-xl max-w-[20ch] mt-3">{titleCase(item.subject)}</h1>
+  {/* Hero block — large image with editorial caption above */}
+  <section class="max-w-layout mx-auto px-6 pt-12 pb-12">
+    <div class="grid md:grid-cols-12 gap-8 items-end mb-8">
+      <div class="md:col-span-8">
+        <p class="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase font-medium text-fg/70">
+          <span class="w-6 h-px bg-accent"></span>
+          Case study
+        </p>
+        <h1 class="font-display text-display-xl mt-4 max-w-[14ch] text-ink">{titleCase(item.subject)}</h1>
+      </div>
+      <div class="md:col-span-4 text-sm text-muted">
+        <p>Custom design, build, branding, and on-site execution for an iGaming event. End-to-end by the Gamingxpo team.</p>
+      </div>
+    </div>
+    <div class="relative rounded-2xl overflow-hidden bg-line aspect-[21/9]">
+      <picture>
+        <source type="image/avif" srcset={`${item.src_base}/1920.avif`} />
+        <img src={`${item.src_base}/1920.webp`} alt={item.alt} class="w-full h-full object-cover" />
+      </picture>
     </div>
   </section>
 
-  <article class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-12 gap-8">
-    <aside class="md:col-span-4 space-y-6 text-sm text-muted">
-      <div><div class="text-fg font-medium">Subject</div><div>{titleCase(item.subject)}</div></div>
-      <div><div class="text-fg font-medium">Quality tier</div><div>{titleCase(item.quality)}</div></div>
+  <article class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-12 gap-8 lg:gap-16">
+    <aside class="md:col-span-4 space-y-6">
+      <div class="border-l border-line pl-4">
+        <div class="text-fg/70 text-xs uppercase tracking-widest">Subject</div>
+        <div class="text-ink font-medium mt-1">{titleCase(item.subject)}</div>
+      </div>
+      <div class="border-l border-line pl-4">
+        <div class="text-fg/70 text-xs uppercase tracking-widest">Year</div>
+        <div class="text-ink font-medium mt-1">2025</div>
+      </div>
+      <div class="border-l border-line pl-4">
+        <div class="text-fg/70 text-xs uppercase tracking-widest">Scope</div>
+        <div class="text-ink font-medium mt-1">Design · Build · Branding · On-site</div>
+      </div>
     </aside>
-    <div class="md:col-span-8 prose prose-invert max-w-prose">
-      <h2>The brief</h2>
-      <p>Each project is custom-designed for the brand and the venue. Detailed case notes for this stand will be added during the launch polish phase.</p>
-      <h2>What we built</h2>
-      <p>Custom carpentry, large-format graphics, ambient lighting, and on-site assembly.</p>
+    <div class="md:col-span-8 max-w-prose space-y-8 text-fg/80 text-body">
+      <div>
+        <h2 class="font-display text-display-md text-ink mb-3">The brief</h2>
+        <p>Each project is custom-designed for the brand and the venue. The team is briefed on the event audience, the brand's footprint requirements, and the operational realities of the venue — then we go to render.</p>
+      </div>
+      <div>
+        <h2 class="font-display text-display-md text-ink mb-3">What we built</h2>
+        <p>Custom carpentry, large-format graphics, ambient lighting, and on-site assembly. Every detail handled by one team — no subcontractor chains.</p>
+      </div>
     </div>
   </article>
 
-  <SectionHeader eyebrow="More work" title="Other booths." />
-  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-3 gap-8 pb-section">
-    {others.map(p => (
-      <a href={`/portfolio/${p.slug}`} class="group block">
-        <div class="aspect-[4/3] overflow-hidden bg-line">
-          <img src={`${p.src_base}/960.webp`} alt={p.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-        </div>
-        <div class="pt-3 font-display group-hover:text-accent transition-colors">{titleCase(p.subject)}</div>
-      </a>
-    ))}
-  </div>
+  <section class="bg-bg-alt border-t border-line">
+    <SectionHeader eyebrow="More work" title="Other booths." />
+    <div class="max-w-layout mx-auto px-6 grid md:grid-cols-3 gap-8 pb-section">
+      {others.map(p => (
+        <a href={`/portfolio/${p.slug}`} class="group block">
+          <div class="aspect-[4/3] overflow-hidden rounded-xl bg-line">
+            <img src={`${p.src_base}/960.webp`} alt={p.alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          </div>
+          <div class="pt-3 font-display text-ink group-hover:text-coral transition-colors">{titleCase(p.subject)}</div>
+        </a>
+      ))}
+    </div>
+  </section>
 
   <ContactSplit />
 </Base>
