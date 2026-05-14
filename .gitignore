@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.astro/
+.tmp/
+.env
+.env.local
+.DS_Store
+*.log
+public/images/portfolio/
+public/images/services/
+# (we COMMIT optimized images later via `git add -f` when phase 2 user-approved)

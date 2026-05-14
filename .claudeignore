@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.astro/
+.tmp/
+public/images/
+package-lock.json
+bun.lockb
+yarn.lock
+pnpm-lock.yaml
+*.min.js
+*.min.css
+*.map
+*.log
