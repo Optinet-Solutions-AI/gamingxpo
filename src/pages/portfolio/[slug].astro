@@ -16,13 +16,13 @@ const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c
 const others = portfolio.filter(p => p.slug !== item.slug && p.quality === 'portfolio_grade').slice(0, 3);
 ---
 <Base title={`${titleCase(item.subject)} — Gamingxpo Portfolio`}>
-  <section class="relative min-h-[70vh]">
-    <picture class="absolute inset-0 -z-10">
+  <section class="relative isolate min-h-[70vh] overflow-hidden">
+    <picture class="absolute inset-0">
       <source type="image/avif" srcset={`${item.src_base}/1920.avif`} />
       <img src={`${item.src_base}/1920.webp`} alt={item.alt} class="w-full h-full object-cover" />
     </picture>
-    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-bg/30 via-bg/40 to-bg" />
-    <div class="max-w-layout mx-auto px-6 pt-32 pb-24 flex flex-col justify-end min-h-[70vh]">
+    <div class="absolute inset-0 bg-gradient-to-b from-bg/30 via-bg/40 to-bg" />
+    <div class="relative max-w-layout mx-auto px-6 pt-32 pb-24 flex flex-col justify-end min-h-[70vh]">
       <p class="text-accent text-sm tracking-[0.2em] uppercase">Case study</p>
       <h1 class="font-display text-display-xl max-w-[20ch] mt-3">{titleCase(item.subject)}</h1>
     </div>
