@@ -11,10 +11,10 @@ import { getCollection } from 'astro:content';
 import portfolio from '../data/portfolio.json';
 
 const services = await getCollection('services');
-const featured = portfolio.filter(p => p.quality === 'portfolio_grade').slice(0, 6);
+const featured = portfolio.filter(p => p.quality === 'portfolio_grade' && p.subject !== 'other').slice(0, 6);
 const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 ---
-<Base title="Gamingxpo — Booths & Stands for iGaming">
+<Base title="Gamingxpo — Booths & Stands for iGaming" description="Premium booths and stands for the iGaming sector, worldwide. SiGMA, ICE, G2E, BiS — we design, build, and ship.">
   <Hero />
   <MetricStrip />
 

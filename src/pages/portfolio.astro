@@ -5,13 +5,13 @@ import CaseCard from '../components/CaseCard.astro';
 import FilterBar from '../components/FilterBar.astro';
 import portfolio from '../data/portfolio.json';
 
-const items = portfolio.filter(p => p.quality !== 'reject');
+const items = portfolio.filter(p => p.quality !== 'reject' && p.subject !== 'other');
 const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
 // Categorize by subject for filter chips
 const subjects = Array.from(new Set(items.map(p => p.subject))).sort();
 ---
-<Base title="Portfolio — Gamingxpo">
+<Base title="Portfolio — Gamingxpo" description="Selected work: booths and stands we've built for iGaming clients across Europe and LATAM.">
   <SectionHeader eyebrow="Portfolio" title="The room, the booth, the brand." kicker="Filter by subject below. Every project tells the same story differently: the brand had a moment to be unmissable, and we built that moment." />
   <FilterBar groups={[
     {name:'Subject', key:'subject', options:subjects.map(titleCase)},
