@@ -1,0 +1,21 @@
+[project]
+name = "gamingxpo-tools"
+version = "0.0.1"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27",
+  "selectolax>=0.3",
+  "instaloader>=4.13",
+  "imagehash>=4.3",
+  "Pillow>=10.4",
+  "anthropic>=0.40",
+  "python-dotenv>=1.0",
+  "rich>=13.7",
+]
+
+[project.optional-dependencies]
+inpaint = ["iopaint>=1.4"]
+test    = ["pytest>=8.0", "pytest-mock>=3.12"]
+
+[tool.pytest.ini_options]
+testpaths = ["tools/tests"]
