@@ -1,0 +1,15 @@
+---
+const { title = 'Gamingxpo' } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="bg-neutral-950">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body class="font-sans antialiased">
+    <slot />
+  </body>
+</html>
