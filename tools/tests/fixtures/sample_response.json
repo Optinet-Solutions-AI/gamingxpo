@@ -1,0 +1,11 @@
+{
+  "has_watermark": true,
+  "watermark_boxes": [
+    {"x": 0.85, "y": 0.92, "w": 0.13, "h": 0.06, "label": "@pavilhao_3 corner watermark"}
+  ],
+  "physical_logos": [
+    {"label": "client logo on booth wall — KEEP"}
+  ],
+  "quality": "portfolio_grade",
+  "subject": "booth_exterior"
+}

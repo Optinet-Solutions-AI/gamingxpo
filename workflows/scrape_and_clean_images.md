@@ -18,7 +18,7 @@
 
 - Instagram rate-limits anonymous mode at ~50 requests; sign in early if scraping a large account.
 - pavilhao3.com's gallery uses lightbox JS; original images may live in `<a href>` not `<img src>` — scraper handles both.
-- IOPaint install pulls PyTorch (~2GB); install via `py -m pip install -e .[inpaint]` only when Phase 2 Task 15 starts.
+- **Switched from IOPaint to cv2.inpaint(TELEA)** — 50MB instead of 2GB PyTorch, fast enough for small corner watermarks. The `[inpaint]` optional-dependency group has been removed from pyproject.toml; `opencv-python>=4.10` is now a core dependency.
 - **pavilhao3.com WordPress fragment IDs**: WordPress appends `#<post-id>` to some `<img src>` URLs (e.g. `LOGO-P3_branco.png#2927`). The scraper strips URL fragments before checking file extensions via `urlunparse(parsed._replace(fragment=""))`.
 - **pavilhao3.com Revslider lazy-load**: The hero slider uses `data-lazyload="//..."` (protocol-relative) rather than `src`. The scraper checks `data-lazyload`, `data-src`, `data-lazy-src`, and `data-original` in addition to `src`. Protocol-relative URLs are normalised to `https:` before resolving.
 - **pavilhao3.com pages /portfolio/ and /galeria/ return 404** (2025-01). All images (17 found, 15 downloaded > 5 KB) come from the homepage alone. Re-check these URLs in future phases in case they are added.
