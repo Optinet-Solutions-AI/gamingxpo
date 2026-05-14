@@ -8,7 +8,7 @@ dependencies = [
   "instaloader>=4.13",
   "imagehash>=4.3",
   "Pillow>=10.4",
-  "anthropic>=0.40",
+  "google-genai>=0.3",
   "python-dotenv>=1.0",
   "rich>=13.7",
 ]
