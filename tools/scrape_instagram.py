@@ -42,46 +42,55 @@ def wait_for_grid(page, max_wait_s: int = 600) -> bool:
     return False
 
 
-def scroll_to_bottom(page, max_iters: int = 80):
-    console.log("Scrolling profile to load all posts...")
-    prev_height = 0
-    stable = 0
-    last_count = 0
-    for i in range(max_iters):
-        page.evaluate("window.scrollTo(0, document.body.scrollHeight)")
-        time.sleep(1.8)
-        height = page.evaluate("document.body.scrollHeight")
-        count = page.evaluate('document.querySelectorAll(\'a[href*="/p/"]\').length')
-        console.log(f"  scroll {i+1:>2}: height={height} posts_visible={count}")
-        if height == prev_height and count == last_count:
-            stable += 1
-            if stable >= 3:
-                break
-        else:
-            stable = 0
-        prev_height, last_count = height, count
-
-
-def extract_image_urls(page) -> list[str]:
-    urls = page.evaluate(
+def snapshot_image_urls(page) -> list[str]:
+    """Grab every <img srcset> URL currently mounted in the profile grid."""
+    return page.evaluate(
         """
         () => {
-          const imgs = Array.from(document.querySelectorAll('main article img, main img[srcset]'));
+          const imgs = Array.from(document.querySelectorAll('img'));
           const out = new Set();
           for (const img of imgs) {
+            // Only profile-grid photos: scoped instagram CDN URLs, square thumbnails.
+            const src = img.currentSrc || img.src || '';
+            if (!src.includes('cdninstagram.com') && !src.includes('fbcdn.net')) continue;
+            // Skip avatars (small) and stories rings — only keep post thumbs.
+            if (img.naturalWidth && img.naturalWidth < 200) continue;
             if (img.srcset) {
               const parts = img.srcset.split(',').map(s => s.trim().split(' '));
               parts.sort((a, b) => parseInt(b[1] || '0', 10) - parseInt(a[1] || '0', 10));
               if (parts[0] && parts[0][0]) out.add(parts[0][0]);
-            } else if (img.src && img.src.startsWith('https://')) {
-              out.add(img.src);
+            } else {
+              out.add(src);
             }
           }
           return [...out];
         }
         """
     )
-    return urls
+
+
+def scroll_and_collect(page, max_iters: int = 60) -> set[str]:
+    """Scroll the profile, collecting image URLs incrementally as tiles mount/unmount."""
+    console.log("Scrolling profile, accumulating image URLs as we go...")
+    collected: set[str] = set()
+    stable_iters = 0
+    for i in range(max_iters):
+        new_urls = set(snapshot_image_urls(page))
+        before = len(collected)
+        collected.update(new_urls)
+        added = len(collected) - before
+        height = page.evaluate("document.body.scrollHeight")
+        console.log(f"  scroll {i+1:>2}: +{added} new, total={len(collected)}, height={height}")
+        if added == 0:
+            stable_iters += 1
+            if stable_iters >= 4:
+                break
+        else:
+            stable_iters = 0
+        # Scroll a chunk; full scrollTo can unmount everything before snapshot
+        page.evaluate("window.scrollBy(0, Math.floor(window.innerHeight * 0.7))")
+        time.sleep(1.5)
+    return collected
 
 
 def download(urls: list[str]) -> list[dict]:
@@ -126,8 +135,8 @@ def scrape():
             context.close()
             sys.exit(4)
 
-        scroll_to_bottom(page)
-        urls = extract_image_urls(page)
+        collected = scroll_and_collect(page)
+        urls = sorted(collected)
         console.print(f"[bold]Found {len(urls)} unique image URLs[/bold]")
 
         manifest = download(urls)
