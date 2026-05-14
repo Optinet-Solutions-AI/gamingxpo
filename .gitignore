@@ -3,6 +3,9 @@ dist/
 .astro/
 .tmp/
 .venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
 .env
 .env.local
 .DS_Store
