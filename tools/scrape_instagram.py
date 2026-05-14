@@ -69,7 +69,7 @@ def snapshot_image_urls(page) -> list[str]:
     )
 
 
-def scroll_and_collect(page, max_iters: int = 60) -> set[str]:
+def scroll_and_collect(page, max_iters: int = 120) -> set[str]:
     """Scroll the profile, collecting image URLs incrementally as tiles mount/unmount."""
     console.log("Scrolling profile, accumulating image URLs as we go...")
     collected: set[str] = set()
@@ -83,7 +83,7 @@ def scroll_and_collect(page, max_iters: int = 60) -> set[str]:
         console.log(f"  scroll {i+1:>2}: +{added} new, total={len(collected)}, height={height}")
         if added == 0:
             stable_iters += 1
-            if stable_iters >= 4:
+            if stable_iters >= 8:
                 break
         else:
             stable_iters = 0
