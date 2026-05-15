@@ -10,7 +10,11 @@ const links = [
 ];
 const current = Astro.url.pathname;
 ---
-<nav class="sticky top-0 z-50 bg-bg/80 backdrop-blur-md border-b border-line">
+<nav
+  data-nav
+  data-state="cream"
+  class="group/nav sticky top-0 z-50 transition-colors duration-200 bg-bg/80 backdrop-blur-md border-b border-line data-[state=dark]:bg-transparent data-[state=dark]:backdrop-blur-none data-[state=dark]:border-transparent"
+>
   <div class="max-w-layout mx-auto flex items-center justify-between px-6 py-4">
     <Logo size={30} />
     <ul class="hidden md:flex gap-7 text-sm">
@@ -18,19 +22,40 @@ const current = Astro.url.pathname;
         <li>
           <a
             href={l.href}
-            class={`relative py-1 transition-colors ${current === l.href ? 'text-ink font-medium' : 'text-fg/70 hover:text-ink'}`}
+            data-navlink
+            class={`relative py-1 transition-colors ${current === l.href ? 'text-ink font-medium' : 'text-fg/70 hover:text-ink'} group-data-[state=dark]/nav:text-bg/70 group-data-[state=dark]/nav:hover:text-bg`}
           >
             {l.label}
-            {current === l.href && <span class="absolute -bottom-0.5 left-0 right-0 h-px bg-ink"></span>}
+            {current === l.href && <span class="absolute -bottom-0.5 left-0 right-0 h-px bg-ink group-data-[state=dark]/nav:bg-bg"></span>}
           </a>
         </li>
       ))}
     </ul>
     <a
       href="/contact"
-      class="hidden md:inline-flex items-center gap-2 bg-ink text-bg font-medium px-4 py-2 rounded-full text-sm hover:bg-fg transition-colors"
+      class="hidden md:inline-flex items-center gap-2 bg-ink text-bg font-medium px-4 py-2 rounded-full text-sm hover:bg-fg transition-colors group-data-[state=dark]/nav:bg-accent group-data-[state=dark]/nav:text-ink group-data-[state=dark]/nav:hover:bg-accent-dim group-data-[state=dark]/nav:hover:text-bg"
     >
       Start a project →
     </a>
   </div>
 </nav>
+
+<script>
+  // Toggle nav between 'cream' and 'dark' based on whether the hero sentinel is in view.
+  // If no sentinel exists on the page (every page except home), stay in cream.
+  const nav = document.querySelector('[data-nav]') as HTMLElement | null;
+  const sentinel = document.querySelector('[data-hero-sentinel]');
+
+  if (nav && sentinel) {
+    nav.dataset.state = 'dark';
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          nav.dataset.state = e.isIntersecting ? 'dark' : 'cream';
+        }
+      },
+      { rootMargin: '-64px 0px 0px 0px', threshold: 0 }
+    );
+    io.observe(sentinel);
+  }
+</script>
