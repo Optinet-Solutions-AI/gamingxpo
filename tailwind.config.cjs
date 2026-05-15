@@ -4,16 +4,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        bg: '#F7F4EF',          // warm cream — main background
-        'bg-alt': '#FFFFFF',    // white — alternating section break
-        'bg-deep': '#1F1A14',   // dark espresso — for inverted sections (footer / contrast moments)
-        fg: '#14110D',          // espresso ink — text
-        muted: '#6E665A',       // warm gray
-        line: '#E5E0D7',        // subtle border
-        accent: '#F5C84B',      // amber gold — eyebrow text, highlights, accent moments
-        ink: '#1A1A1A',         // near-black — for CTAs that need maximum contrast
-        pop: '#E6FF3D',         // electric lime — sparing pops only (e.g. dot in logo)
-        coral: '#E66B3D',       // warm coral — secondary accent for variation
+        bg: '#F7F4EF',
+        'bg-alt': '#FFFFFF',
+        fg: '#14110D',
+        muted: '#6E665A',
+        line: '#E5E0D7',
+        ink: '#0A0A0B',
+        accent: '#F59E0B',
+        'accent-dim': '#B45309',
       },
       fontFamily: {
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
