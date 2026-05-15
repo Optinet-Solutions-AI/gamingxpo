@@ -22,7 +22,6 @@ const current = Astro.url.pathname;
         <li>
           <a
             href={l.href}
-            data-navlink
             class={`relative py-1 transition-colors ${current === l.href ? 'text-ink font-medium' : 'text-fg/70 hover:text-ink'} group-data-[state=dark]/nav:text-bg/70 group-data-[state=dark]/nav:hover:text-bg`}
           >
             {l.label}
@@ -47,7 +46,9 @@ const current = Astro.url.pathname;
   const sentinel = document.querySelector('[data-hero-sentinel]');
 
   if (nav && sentinel) {
+    nav.style.transitionDuration = '0ms';
     nav.dataset.state = 'dark';
+    requestAnimationFrame(() => { nav.style.transitionDuration = ''; });
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
