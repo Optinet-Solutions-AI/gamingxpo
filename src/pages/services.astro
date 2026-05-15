@@ -5,24 +5,103 @@ import ContactSplit from '../components/ContactSplit.astro';
 import { getCollection } from 'astro:content';
 
 const services = await getCollection('services');
----
-<Base title="Services — Gamingxpo" description="Design, build, branding, AV, and on-site assembly for iGaming event booths. End-to-end, one in-house team.">
-  <SectionHeader eyebrow="Services" title="From concept to teardown." kicker="Five disciplines. One in-house team. Every booth shipped on the date written on the contract." />
 
-  <div class="max-w-layout mx-auto px-6 space-y-section pb-section">
-    {services.map(async (s) => {
+// Map service slug -> cover image slug (each verified at public/images/portfolio/<slug>/1440.webp)
+const SERVICE_COVERS: Record<string, string> = {
+  'design':    'edp-web-summit-2019',
+  'build':     'serralharia-4-scaled',
+  'branding':  'impressao-2-scaled',
+  'av-tech':   'hlh-nw40vkgbsp7eyxxhjmmn6c-j1wr3ext5uqktkvq-plaintext-638346420070130906',
+  'on-site':   'havaianas-rock-in-rio-2018-1280x1000-1',
+};
+
+// Abstract SVG marks (one per service)
+const SERVICE_MARKS: Record<string, string> = {
+  'design':    '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="40" cy="40" r="30"/><circle cx="40" cy="40" r="20"/><path d="M40 10v60M10 40h60"/></svg>',
+  'build':     '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="14" y="14" width="52" height="52"/><path d="M14 30h52M14 50h52M30 14v52M50 14v52"/></svg>',
+  'branding':  '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M14 14h52v18H14zm0 24h52v28H14z"/><path d="M14 23h52M30 23v15M50 23v15"/></svg>',
+  'av-tech':   '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="12" y="18" width="56" height="36" rx="2"/><path d="M30 60h20M40 54v6"/><circle cx="40" cy="36" r="6"/></svg>',
+  'on-site':   '<svg viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 60V30l20-15 20 15v30"/><path d="M30 60V40h20v20"/><circle cx="40" cy="48" r="3"/></svg>',
+};
+
+// Preferred display order
+const order = ['design', 'build', 'branding', 'av-tech', 'on-site'];
+const orderedServices = order
+  .map(slug => services.find(s => s.slug === slug))
+  .filter(Boolean) as typeof services;
+
+const totalLabel = String(orderedServices.length).padStart(2, '0');
+---
+<Base
+  title="Services - Gamingxpo"
+  description="Design, build, branding, AV, on-site. Every booth, end-to-end, by one in-house team."
+>
+  <SectionHeader
+    eyebrow="Services"
+    title="From concept to teardown."
+    kicker="Five disciplines. One in-house team. Every booth shipped on the date written on the contract."
+  />
+
+  <div class="max-w-layout mx-auto px-6 pb-section">
+    {orderedServices.map(async (s, idx) => {
       const { Content } = await s.render();
+      const reversed = idx % 2 === 1;
+      const coverSlug = SERVICE_COVERS[s.slug] ?? 'edp-web-summit-2019';
+      const mark = SERVICE_MARKS[s.slug] ?? '';
+      const num = String(idx + 1).padStart(2, '0');
       return (
-        <article id={s.slug} class="grid md:grid-cols-12 gap-8 border-t border-line pt-12 scroll-mt-24">
-          <div class="md:col-span-4">
-            <p class="text-accent text-sm tracking-[0.2em] uppercase">{s.data.title}</p>
+        <article
+          id={s.slug}
+          class="grid md:grid-cols-12 gap-8 lg:gap-12 items-center scroll-mt-24 py-section-sm border-t border-line first:border-t-0"
+        >
+          {/* Image side */}
+          <div class={`md:col-span-7 ${reversed ? 'md:order-2' : ''}`}>
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-line">
+              <picture>
+                <source
+                  type="image/avif"
+                  srcset={`/images/portfolio/${coverSlug}/640.avif 640w, /images/portfolio/${coverSlug}/960.avif 960w, /images/portfolio/${coverSlug}/1440.avif 1440w`}
+                  sizes="(min-width: 768px) 60vw, 100vw"
+                />
+                <img
+                  src={`/images/portfolio/${coverSlug}/1440.webp`}
+                  alt={s.data.title}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="absolute top-4 left-4 bg-bg-alt/90 backdrop-blur px-3 py-1.5 rounded-full text-xs text-ink font-medium tracking-widest">
+                {num} / {totalLabel}
+              </div>
+            </div>
           </div>
-          <div class="md:col-span-8 max-w-prose">
-            <h2 class="font-display text-display-lg">{s.data.intro}</h2>
-            <div class="mt-6 prose prose-invert text-fg/80"><Content /></div>
-            <ul class="mt-6 grid grid-cols-2 gap-2 text-sm text-muted">
-              {s.data.deliverables.map((d: string) => <li>· {d}</li>)}
-            </ul>
+
+          {/* Text side */}
+          <div class={`md:col-span-5 ${reversed ? 'md:order-1' : ''}`}>
+            <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-bg-alt border border-line text-ink mb-5">
+              <Fragment set:html={mark.replace('<svg ', '<svg width="32" height="32" ')} />
+            </div>
+            <p class="text-accent text-xs tracking-[0.25em] uppercase font-medium">Service {num}</p>
+            <h2 class="font-display text-display-md mt-3 text-ink">{s.data.title}</h2>
+            <p class="mt-4 text-fg/80 text-body max-w-prose">{s.data.intro}</p>
+
+            <div class="mt-6 prose prose-sm max-w-prose text-fg/70 marker:text-accent prose-headings:text-ink prose-p:text-fg/70">
+              <Content />
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-line">
+              <div class="text-xs uppercase tracking-widest text-fg/60 mb-3">Deliverables</div>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-ink">
+                {s.data.deliverables.map((d: string) => (
+                  <li class="flex items-start gap-2">
+                    <svg class="w-3.5 h-3.5 mt-1 text-accent flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                      <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>{d}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </article>
       );

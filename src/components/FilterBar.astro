@@ -16,8 +16,8 @@ const { groups = [] } = Astro.props;
 </div>
 
 <style is:global>
-  .filter-chip { @apply text-sm px-3 py-1 rounded-full border border-line text-fg/80 hover:border-accent transition; }
-  .filter-chip.is-active { @apply bg-accent text-bg border-accent; }
+  .filter-chip { @apply text-sm px-3.5 py-1.5 rounded-full border border-line text-fg/80 hover:border-ink hover:text-ink transition-colors; }
+  .filter-chip.is-active { @apply bg-ink text-bg border-ink; }
 </style>
 
 <script>

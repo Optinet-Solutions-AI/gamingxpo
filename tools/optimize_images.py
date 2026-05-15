@@ -14,6 +14,7 @@ from tools._common import CLASSIFIED, ROOT, read_json
 
 console = Console()
 CONTENT = ROOT / "src" / "content"
+DATA = ROOT / "src" / "data"
 
 
 def slugify(name: str) -> str:
@@ -51,11 +52,11 @@ def emit_content_manifest() -> None:
             "alt": meta.get("subject", "iGaming booth").replace("_", " "),
         })
 
-    CONTENT.mkdir(parents=True, exist_ok=True)
-    (CONTENT / "portfolio.json").write_text(
+    DATA.mkdir(parents=True, exist_ok=True)
+    (DATA / "portfolio.json").write_text(
         json.dumps(items, indent=2, ensure_ascii=False), encoding="utf-8"
     )
-    console.log(f"[green]Wrote {len(items)} portfolio entries -> src/content/portfolio.json[/green]")
+    console.log(f"[green]Wrote {len(items)} portfolio entries -> src/data/portfolio.json[/green]")
 
 
 def main() -> None:

@@ -1,0 +1,139 @@
+---
+import Base from '../../layouts/Base.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ContactSplit from '../../components/ContactSplit.astro';
+import projects from '../../data/projects.json';
+import portfolio from '../../data/portfolio.json';
+
+export function getStaticPaths() {
+  return Object.values(projects).map((proj: any) => ({
+    params: { project: proj.slug },
+    props: { project: proj },
+  }));
+}
+
+const { project } = Astro.props;
+const images = (portfolio as any[]).filter((p: any) =>
+  (p.project ?? '').toLowerCase().replace(/\s+/g, '-') === project.slug
+  && p.quality !== 'reject'
+);
+const cover = images.find((p: any) => p.subject === 'booth_exterior') ?? images[0];
+const otherProjects = Object.values(projects)
+  .filter((p: any) => p.slug !== project.slug)
+  .slice(0, 3) as any[];
+---
+<Base
+  title={`${project.name} - Gamingxpo Portfolio`}
+  description={project.description.slice(0, 160)}
+  ogImage={cover ? `${cover.src_base}/1920.webp` : undefined}
+>
+
+  <!-- Hero block -->
+  <section class="max-w-layout mx-auto px-6 pt-12 pb-12">
+    <div class="grid md:grid-cols-12 gap-8 items-end mb-8">
+      <div class="md:col-span-8">
+        <p class="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase font-medium text-fg/70">
+          <span class="w-6 h-px bg-accent"></span>
+          Case study · Client {project.name}
+        </p>
+        <h1 class="font-display text-display-xl mt-4 max-w-[14ch] text-ink">{project.name}</h1>
+      </div>
+      <div class="md:col-span-4 text-sm text-muted">
+        <p>{project.description.split(/\.\s+/)[0]}.</p>
+      </div>
+    </div>
+    {cover && (
+      <div class="relative rounded-2xl overflow-hidden bg-line aspect-[21/9]">
+        <picture>
+          <source type="image/avif" srcset={`${cover.src_base}/1920.avif`} />
+          <img src={`${cover.src_base}/1920.webp`} alt={cover.alt} class="w-full h-full object-cover" />
+        </picture>
+      </div>
+    )}
+  </section>
+
+  <!-- Story + sidebar -->
+  <article class="max-w-layout mx-auto px-6 py-section grid md:grid-cols-12 gap-8 lg:gap-16">
+    <aside class="md:col-span-4 space-y-6">
+      <div class="border-l border-line pl-4">
+        <div class="text-fg/70 text-xs uppercase tracking-widest">Client</div>
+        <div class="text-ink font-medium mt-1">{project.name}</div>
+      </div>
+      <div class="border-l border-line pl-4">
+        <div class="text-fg/70 text-xs uppercase tracking-widest">Photos in gallery</div>
+        <div class="text-ink font-medium mt-1">{images.length}</div>
+      </div>
+      <div class="border-l border-line pl-4">
+        <div class="text-fg/70 text-xs uppercase tracking-widest">Scope</div>
+        <div class="text-ink font-medium mt-1">Design · Build · Branding · On-site</div>
+      </div>
+    </aside>
+    <div class="md:col-span-8 max-w-prose space-y-6 text-fg/80 text-body">
+      <h2 class="font-display text-display-md text-ink">About the project</h2>
+      <p>{project.description}</p>
+    </div>
+  </article>
+
+  <!-- Image gallery - all angles -->
+  <section class="bg-bg-alt border-t border-line">
+    <div class="max-w-layout mx-auto px-6 py-section">
+      <header class="mb-8">
+        <p class="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase font-medium text-fg/70">
+          <span class="w-6 h-px bg-accent"></span>
+          Gallery
+        </p>
+        <h2 class="font-display text-display-lg mt-4 text-ink">Every angle.</h2>
+      </header>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {images.map((img: any) => (
+          <div class="aspect-[4/3] overflow-hidden rounded-xl bg-line">
+            <picture>
+              <source
+                type="image/avif"
+                srcset={`${img.src_base}/640.avif 640w, ${img.src_base}/960.avif 960w, ${img.src_base}/1440.avif 1440w`}
+                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+              />
+              <img
+                src={`${img.src_base}/960.webp`}
+                alt={img.alt}
+                class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                loading="lazy"
+              />
+            </picture>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- More projects -->
+  {otherProjects.length > 0 && (
+    <section>
+      <SectionHeader eyebrow="More work" title="Other clients." />
+      <div class="max-w-layout mx-auto px-6 grid md:grid-cols-3 gap-8 pb-section">
+        {otherProjects.map((p: any) => {
+          const c = (portfolio as any[]).find(
+            (x: any) => (x.project ?? '').toLowerCase().replace(/\s+/g, '-') === p.slug
+          );
+          return (
+            <a href={`/portfolio/${p.slug}`} class="group block">
+              <div class="aspect-[4/3] overflow-hidden rounded-xl bg-line">
+                {c && (
+                  <img
+                    src={`${c.src_base}/960.webp`}
+                    alt={c.alt}
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
+              </div>
+              <div class="pt-3 font-display text-ink group-hover:text-coral transition-colors">{p.name}</div>
+            </a>
+          );
+        })}
+      </div>
+    </section>
+  )}
+
+  <ContactSplit />
+</Base>

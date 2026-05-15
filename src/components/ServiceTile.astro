@@ -1,13 +1,21 @@
 ---
-const { title, blurb, src_base, alt, href } = Astro.props;
+const { title, blurb, src_base, alt, href, icon } = Astro.props;
 ---
-<a href={href ?? '/services'} class="group block border border-line p-6 hover:border-accent transition-colors">
-  {src_base && (
-    <div class="aspect-[16/10] overflow-hidden bg-bg mb-6">
+<a href={href ?? '/services'} class="group relative block bg-bg-alt border border-line p-7 rounded-2xl hover:border-ink hover:shadow-[0_12px_40px_-12px_rgba(20,17,13,0.15)] transition-all">
+  {icon && (
+    <div class="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-bg mb-5 text-ink">
+      <Fragment set:html={icon} />
+    </div>
+  )}
+  {src_base && !icon && (
+    <div class="aspect-[16/10] overflow-hidden rounded-xl bg-bg mb-5">
       <img src={`${src_base}/960.webp`} alt={alt} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
     </div>
   )}
-  <div class="font-display text-display-md">{title}</div>
-  <p class="text-muted mt-2 max-w-prose">{blurb}</p>
-  <span class="inline-block mt-4 text-accent text-sm">Learn more →</span>
+  <div class="font-display text-display-md text-ink">{title}</div>
+  <p class="text-muted mt-2 max-w-prose text-sm leading-relaxed">{blurb}</p>
+  <span class="inline-flex items-center gap-1 mt-5 text-ink text-sm font-medium group-hover:gap-2 transition-all">
+    Learn more
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+  </span>
 </a>

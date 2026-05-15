@@ -6,12 +6,13 @@ const { items = [
   { value: '40+', label: 'iGaming clients' },
 ] } = Astro.props;
 ---
-<section class="border-y border-line">
+<section class="bg-bg-alt border-y border-line">
   <div class="max-w-layout mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8">
     {items.map((i: { value: string; label: string }) => (
-      <div>
-        <div class="font-display text-display-md text-accent">{i.value}</div>
-        <div class="text-muted text-sm mt-1">{i.label}</div>
+      <div class="relative pl-4">
+        <span class="absolute left-0 top-1 bottom-1 w-px bg-accent"></span>
+        <div class="font-display text-display-md text-ink">{i.value}</div>
+        <div class="text-muted text-sm mt-1 tracking-wide">{i.label}</div>
       </div>
     ))}
   </div>

@@ -7,33 +7,87 @@ import MarqueeBrands from '../components/MarqueeBrands.astro';
 import CaseCard from '../components/CaseCard.astro';
 import ServiceTile from '../components/ServiceTile.astro';
 import ContactSplit from '../components/ContactSplit.astro';
+import Testimonials from '../components/Testimonials.astro';
+import Team from '../components/Team.astro';
 import { getCollection } from 'astro:content';
 import portfolio from '../data/portfolio.json';
+import projectsData from '../data/projects.json';
 
 const services = await getCollection('services');
-const featured = portfolio.filter(p => p.quality === 'portfolio_grade' && p.subject !== 'other').slice(0, 6);
-const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+const projectsList = (Object.values(projectsData) as any[]).map((p: any) => {
+  const images = (portfolio as any[]).filter((img: any) =>
+    (img.project ?? '').toLowerCase().replace(/\s+/g, '-') === p.slug
+    && img.quality !== 'reject'
+  );
+  const cover = images.find((img: any) => img.subject === 'booth_exterior') ?? images[0];
+  return { ...p, cover };
+}).filter((p: any) => p.cover);
+
+const featuredProjects = projectsList.slice(0, 6);
+
+const serviceIcons: Record<string, string> = {
+  'design':   '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>',
+  'build':    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+  'branding': '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>',
+  'av-tech':  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+  'on-site':  '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.5-4 7-7 4 4-7 7L4 22"/><path d="M14.5 5.5l4 4"/><path d="M19 2l3 3-2.5 2.5-3-3z"/></svg>',
+};
 ---
-<Base title="Gamingxpo — Booths & Stands for iGaming" description="Premium booths and stands for the iGaming sector, worldwide. SiGMA, ICE, G2E, BiS — we design, build, and ship.">
+<Base title="Gamingxpo - Booths & Stands for iGaming" description="Premium booths and stands for the iGaming sector, worldwide. SiGMA, ICE, G2E, BiS - we design, build, and ship.">
   <Hero />
   <MetricStrip />
 
-  <SectionHeader eyebrow="Selected work" title="Booths that earn the room." kicker="A small sample. Every booth we've built was custom-designed for the event, the brand, and the crowd in front of it." />
-  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {featured.map(p => <CaseCard {...p} title={titleCase(p.subject)} event="iGaming event" year={2025} />)}
-  </div>
+  {/* Selected work - alternating section on bg-alt (white) */}
+  <section class="bg-bg">
+    <SectionHeader eyebrow="Selected work" title="Booths that earn the room." kicker="A small sample. Every booth we've built was custom-designed for the event, the brand, and the crowd in front of it." />
+    <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+      {featuredProjects.map((p: any) => (
+        <CaseCard
+          slug={p.slug}
+          src_base={p.cover.src_base}
+          alt={p.cover.alt}
+          title={p.name}
+          event="iGaming event"
+          year={2025}
+        />
+      ))}
+    </div>
+    <div class="max-w-layout mx-auto px-6 mt-12 mb-section text-center">
+      <a href="/portfolio" class="inline-flex items-center gap-2 border border-ink/20 text-ink px-6 py-3 rounded-full hover:bg-ink hover:text-bg hover:border-ink transition-colors">
+        See all projects
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </section>
 
-  <div class="max-w-layout mx-auto px-6 mt-section text-center">
-    <a href="/portfolio" class="inline-flex items-center gap-2 border border-line text-fg px-6 py-3 rounded-full hover:border-accent transition">See all projects →</a>
-  </div>
+  {/* What we do - on bg-alt (white) for contrast */}
+  <section class="bg-bg-alt border-t border-line">
+    <SectionHeader eyebrow="What we do" title="Five disciplines, one team." kicker="From the first concept sketch to the moment our crew packs up after the show. No subcontractor chains." />
+    <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5 pb-section">
+      {services.slice(0,5).map(s => (
+        <ServiceTile
+          title={s.data.title}
+          blurb={s.data.intro}
+          href={`/services#${s.slug}`}
+          icon={serviceIcons[s.slug] ?? serviceIcons['design']}
+        />
+      ))}
+      <a href="/services" class="group flex flex-col justify-between p-7 rounded-2xl bg-ink text-bg hover:bg-fg transition-colors">
+        <div>
+          <p class="text-accent text-xs tracking-[0.25em] uppercase font-medium">Everything</p>
+          <h3 class="font-display text-display-md mt-3 max-w-[12ch]">One vendor. One accountable lead.</h3>
+        </div>
+        <span class="inline-flex items-center gap-2 mt-6 text-sm font-medium">
+          Browse all services
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
 
-  <SectionHeader eyebrow="What we do" title="Five things, done end-to-end." kicker="From the first concept sketch to the moment our crew packs up after the show." />
-  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-3 gap-8">
-    {services.slice(0,5).map(s => (
-      <ServiceTile title={s.data.title} blurb={s.data.intro} href={`/services#${s.slug}`} />
-    ))}
-  </div>
-
+  <Testimonials />
+  <Team />
   <MarqueeBrands />
   <ContactSplit />
 </Base>

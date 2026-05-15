@@ -1,26 +1,62 @@
 ---
 import Base from '../layouts/Base.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import CaseCard from '../components/CaseCard.astro';
-import FilterBar from '../components/FilterBar.astro';
+import projects from '../data/projects.json';
 import portfolio from '../data/portfolio.json';
 
-const items = portfolio.filter(p => p.quality !== 'reject' && p.subject !== 'other');
-const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+const projectList = (Object.values(projects) as any[]).map((p: any) => {
+  const images = (portfolio as any[]).filter((img: any) =>
+    (img.project ?? '').toLowerCase().replace(/\s+/g, '-') === p.slug
+    && img.quality !== 'reject'
+  );
+  const cover = images.find((img: any) => img.subject === 'booth_exterior') ?? images[0];
+  return { ...p, cover, imageCount: images.length };
+}).filter((p: any) => p.cover);
 
-// Categorize by subject for filter chips
-const subjects = Array.from(new Set(items.map(p => p.subject))).sort();
+projectList.sort((a: any, b: any) => b.imageCount - a.imageCount);
+const totalPhotos = projectList.reduce((s: number, p: any) => s + p.imageCount, 0);
 ---
-<Base title="Portfolio — Gamingxpo" description="Selected work: booths and stands we've built for iGaming clients across Europe and LATAM.">
-  <SectionHeader eyebrow="Portfolio" title="The room, the booth, the brand." kicker="Filter by subject below. Every project tells the same story differently: the brand had a moment to be unmissable, and we built that moment." />
-  <FilterBar groups={[
-    {name:'Subject', key:'subject', options:subjects.map(titleCase)},
-  ]} />
-  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-section">
-    {items.map(p => (
-      <div data-card data-subject={titleCase(p.subject)}>
-        <CaseCard {...p} title={titleCase(p.subject)} event="iGaming event" year={2025} />
-      </div>
+<Base
+  title="Portfolio - Gamingxpo"
+  description="Selected booth builds for iGaming clients. Click any project for the full multi-angle gallery."
+>
+  <SectionHeader
+    eyebrow="Portfolio"
+    title={`${projectList.length} clients. ${totalPhotos}+ photos.`}
+    kicker="Every project below was designed, built, freighted, and assembled on-site by the in-house Gamingxpo team. Click any card for the full gallery."
+  />
+
+  <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 pb-section">
+    {projectList.map((p: any) => (
+      <a href={`/portfolio/${p.slug}`} class="group block">
+        <div class="aspect-[4/3] overflow-hidden rounded-xl bg-line relative">
+          <picture>
+            <source
+              type="image/avif"
+              srcset={`${p.cover.src_base}/640.avif 640w, ${p.cover.src_base}/960.avif 960w, ${p.cover.src_base}/1440.avif 1440w`}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+            />
+            <img
+              src={`${p.cover.src_base}/960.webp`}
+              alt={p.cover.alt}
+              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+            />
+          </picture>
+          <div class="absolute top-3 left-3 bg-bg-alt/90 backdrop-blur px-2.5 py-1 rounded-full text-xs text-ink font-medium">
+            {p.imageCount} photos
+          </div>
+        </div>
+        <div class="pt-4 flex items-start justify-between gap-4">
+          <div>
+            <div class="text-xs text-muted uppercase tracking-widest">Case study</div>
+            <div class="text-display-md font-display mt-1 text-ink group-hover:text-coral transition-colors">{p.name}</div>
+          </div>
+          <span class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-line group-hover:bg-ink group-hover:border-ink group-hover:text-bg transition-colors text-ink">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </a>
     ))}
   </div>
 </Base>
