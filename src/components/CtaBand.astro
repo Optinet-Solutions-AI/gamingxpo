@@ -1,0 +1,24 @@
+---
+const {
+  eyebrow = 'Ready when you are',
+  headline = 'Ready to build the booth that gets the room?',
+  sub = 'One vendor. One accountable lead. Built in Lisbon, shipped worldwide.',
+  cta = { href: '/contact', label: 'Start your booth' },
+} = Astro.props;
+---
+<section class="bg-ink text-bg">
+  <div class="max-w-layout mx-auto px-6 py-section text-center">
+    <p class="text-accent text-xs tracking-[0.25em] uppercase font-medium">{eyebrow}</p>
+    <h2 class="font-display text-display-lg mt-4 max-w-[20ch] mx-auto">{headline}</h2>
+    <p class="mt-5 text-bg/70 text-body max-w-prose mx-auto">{sub}</p>
+    <a
+      href={cta.href}
+      class="mt-9 inline-flex items-center gap-2 bg-accent text-ink font-medium px-7 py-3.5 rounded-full hover:bg-accent-dim hover:text-bg transition-colors"
+    >
+      {cta.label}
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
