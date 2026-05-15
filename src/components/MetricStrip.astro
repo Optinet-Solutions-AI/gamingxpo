@@ -7,7 +7,7 @@ const { items = [
 ] } = Astro.props;
 ---
 <section class="bg-ink text-bg">
-  <div class="max-w-layout mx-auto px-6 pt-0 pb-16 grid grid-cols-2 md:grid-cols-4 gap-8">
+  <div class="max-w-layout mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-8">
     {items.map((i: { value: string; label: string }) => (
       <div class="relative pl-4">
         <span class="absolute left-0 top-1 bottom-1 w-px bg-accent"></span>
