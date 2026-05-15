@@ -81,11 +81,11 @@ const totalLabel = String(orderedServices.length).padStart(2, '0');
             <div class="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-bg-alt border border-line text-ink mb-5">
               <Fragment set:html={mark.replace('<svg ', '<svg width="32" height="32" ')} />
             </div>
-            <p class="text-accent text-xs tracking-[0.25em] uppercase font-medium">Service {num}</p>
+            <p class="text-accent-dim text-xs tracking-[0.25em] uppercase font-medium">Service {num}</p>
             <h2 class="font-display text-display-md mt-3 text-ink">{s.data.title}</h2>
             <p class="mt-4 text-fg/80 text-body max-w-prose">{s.data.intro}</p>
 
-            <div class="mt-6 prose prose-sm max-w-prose text-fg/70 marker:text-accent prose-headings:text-ink prose-p:text-fg/70">
+            <div class="mt-6 prose prose-sm max-w-prose text-fg/70 marker:text-accent-dim prose-headings:text-ink prose-p:text-fg/70">
               <Content />
             </div>
 
@@ -94,7 +94,7 @@ const totalLabel = String(orderedServices.length).padStart(2, '0');
               <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-ink">
                 {s.data.deliverables.map((d: string) => (
                   <li class="flex items-start gap-2">
-                    <svg class="w-3.5 h-3.5 mt-1 text-accent flex-shrink-0" viewBox="0 0 16 16" fill="none">
+                    <svg class="w-3.5 h-3.5 mt-1 text-accent-dim flex-shrink-0" viewBox="0 0 16 16" fill="none">
                       <path d="M3 8l3 3 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                     <span>{d}</span>

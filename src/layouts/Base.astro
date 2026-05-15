@@ -15,7 +15,9 @@ const { title = 'Gamingxpo', description, ogImage } = Astro.props;
   </head>
   <body class="font-sans antialiased bg-bg text-fg">
     <Nav />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>
