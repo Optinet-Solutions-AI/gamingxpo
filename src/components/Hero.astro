@@ -56,11 +56,18 @@ const {
             srcset={`${cover.src_base}/960.avif 960w, ${cover.src_base}/1440.avif 1440w, ${cover.src_base}/1920.avif 1920w`}
             sizes="(min-width: 1024px) 50vw, 100vw"
           />
+          <source
+            type="image/webp"
+            srcset={`${cover.src_base}/960.webp 960w, ${cover.src_base}/1440.webp 1440w, ${cover.src_base}/1920.webp 1920w`}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+          />
           <img
             src={`${cover.src_base}/1440.webp`}
             alt={cover.alt}
             class="w-full rounded-2xl object-cover bg-fg/40 motion-safe:animate-[kenburns_24s_ease-out_infinite_alternate]"
             style="height: clamp(280px, 60vh, 640px);"
+            width="1920"
+            height="1080"
             loading="eager"
             fetchpriority="high"
           />
