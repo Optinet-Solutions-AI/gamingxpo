@@ -1,5 +1,275 @@
 [
   {
+    "slug": "alexandre-machado-2-site-scaled-e1767723164278-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/alexandre-machado-2-site-scaled-e1767723164278-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "andre-e-alexandre-office-1-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/andre-e-alexandre-office-1-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "andre-maricato-silva-scaled-e1767723141172-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/andre-maricato-silva-scaled-e1767723141172-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "bacardi-1-111x75",
+    "subject": "detail",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/bacardi-1-111x75",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "carla-trapola-scaled-e1767723110395-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/carla-trapola-scaled-e1767723110395-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "carpintaria-1-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/carpintaria-1-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "carpintaria-2-scaled-e1766156914153-450x500",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/carpintaria-2-scaled-e1766156914153-450x500",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "edp-web-summit-2019",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/edp-web-summit-2019",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/edp/",
+    "project": "Edp"
+  },
+  {
+    "slug": "edp-web-summit-2019-1280x1000",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/edp-web-summit-2019-1280x1000",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-types/design/"
+  },
+  {
+    "slug": "edp-web-summit-2019-800x800",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/edp-web-summit-2019-800x800",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/oriflame/",
+    "project": "Oriflame"
+  },
+  {
+    "slug": "eliana-rodrigues-scaled-e1767723083506-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/eliana-rodrigues-scaled-e1767723083506-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "fatima-nunes-scaled-e1767723056220-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/fatima-nunes-scaled-e1767723056220-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "foto-fabrica-aerea-scaled",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/foto-fabrica-aerea-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/"
+  },
+  {
+    "slug": "francisco-leitao-scaled-e1767723030704-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/francisco-leitao-scaled-e1767723030704-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "galp-2",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/galp-2",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "galp-2-150x64",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/galp-2-150x64",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "giovanna-laurito-scaled-e1767722996892-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/giovanna-laurito-scaled-e1767722996892-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "havaianas-rock-in-rio-2018-1280x1000-1",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/havaianas-rock-in-rio-2018-1280x1000-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/havaianas/",
+    "project": "Havaianas"
+  },
+  {
+    "slug": "havaianas-rock-in-rio-2018-1630x860-1",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/havaianas-rock-in-rio-2018-1630x860-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/havaianas/",
+    "project": "Havaianas"
+  },
+  {
     "slug": "havaianas-rock-in-rio-2018-2048x1367-1-1200x801",
     "subject": "booth_exterior",
     "quality": "portfolio_grade",
@@ -10,20 +280,82 @@
       1440,
       1920
     ],
-    "alt": "booth exterior"
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-types/design/"
   },
   {
-    "slug": "havaianas-rock-in-rio-2018-2048x1367-1-1280x1000",
+    "slug": "havaianas-rock-in-rio-2018-2048x1367-1-800x800",
     "subject": "booth_exterior",
     "quality": "portfolio_grade",
-    "src_base": "/images/portfolio/havaianas-rock-in-rio-2018-2048x1367-1-1280x1000",
+    "src_base": "/images/portfolio/havaianas-rock-in-rio-2018-2048x1367-1-800x800",
     "widths": [
       640,
       960,
       1440,
       1920
     ],
-    "alt": "booth exterior"
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/oriflame/",
+    "project": "Oriflame"
+  },
+  {
+    "slug": "heineken-1-146x75",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/heineken-1-146x75",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "hlh-nw40vkgbsp7eyxxhjmmn6c-j1wr3ext5uqktkvq-plaintext-638346420070130906",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/hlh-nw40vkgbsp7eyxxhjmmn6c-j1wr3ext5uqktkvq-plaintext-638346420070130906",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "home-digital-portfolio2",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/home-digital-portfolio2",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/portugalia/",
+    "project": "Portugalia"
+  },
+  {
+    "slug": "home-digital-portfolio5",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/home-digital-portfolio5",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/portugalia/",
+    "project": "Portugalia"
   },
   {
     "slug": "ig-000",
@@ -104,6 +436,19 @@
     "alt": "booth exterior"
   },
   {
+    "slug": "ig-006",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/ig-006",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior"
+  },
+  {
     "slug": "ig-007",
     "subject": "booth_interior",
     "quality": "portfolio_grade",
@@ -156,17 +501,732 @@
     "alt": "detail"
   },
   {
-    "slug": "ig-012",
-    "subject": "detail",
+    "slug": "image3-1",
+    "subject": "team",
     "quality": "portfolio_grade",
-    "src_base": "/images/portfolio/ig-012",
+    "src_base": "/images/portfolio/image3-1",
     "widths": [
       640,
       960,
       1440,
       1920
     ],
-    "alt": "detail"
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-20-38-59-13488739",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-20-38-59-13488739",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-20-49-02-81ac3f0c",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-20-49-02-81ac3f0c",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/rubis-gas/",
+    "project": "Rubis Gas"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-00-04-db733349",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-00-04-db733349",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-05-12-1e76ee74",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-05-12-1e76ee74",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/quisque-lorem-tortor/",
+    "project": "Quisque Lorem Tortor"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-08-24-3d4034ff-768x768",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-08-24-3d4034ff-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/iqos/",
+    "project": "Iqos"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-08-24-3d4034ff-960x750",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-08-24-3d4034ff-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-08-24-5701599c",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-08-24-5701599c",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/aliquam-eratac/",
+    "project": "Aliquam Eratac"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-08-24-c1ebfd39",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-08-24-c1ebfd39",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/aliquam-eratac/",
+    "project": "Aliquam Eratac"
+  },
+  {
+    "slug": "imagem-whatsapp-2023-11-03-as-21-20-58-b563ba96",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/imagem-whatsapp-2023-11-03-as-21-20-58-b563ba96",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/fidelidade/",
+    "project": "Fidelidade"
+  },
+  {
+    "slug": "img-20231103-wa0013-768x768",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0013-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/quisque-lorem-tortor/",
+    "project": "Quisque Lorem Tortor"
+  },
+  {
+    "slug": "img-20231103-wa0013-960x750",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0013-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com"
+  },
+  {
+    "slug": "img-20231103-wa0023",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0023",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/curabitur-et-ligula/",
+    "project": "Curabitur Et Ligula"
+  },
+  {
+    "slug": "img-20231103-wa0034",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0034",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0035",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0035",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0039-1",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0039-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0039-768x768",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0039-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0039-960x750",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0039-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/"
+  },
+  {
+    "slug": "img-20231103-wa0043",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0043",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0045",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0045",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0046",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0046",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0055",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0055",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/rubis-gas/",
+    "project": "Rubis Gas"
+  },
+  {
+    "slug": "img-20231103-wa0056",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0056",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/rubis-gas/",
+    "project": "Rubis Gas"
+  },
+  {
+    "slug": "img-20231103-wa0057",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0057",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/rubis-gas/",
+    "project": "Rubis Gas"
+  },
+  {
+    "slug": "img-20231103-wa0058-768x768",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0058-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vella-cafe/",
+    "project": "Vella Cafe"
+  },
+  {
+    "slug": "img-20231103-wa0058-960x750",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0058-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/happen/"
+  },
+  {
+    "slug": "img-20231103-wa0060",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0060",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0061",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0061",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0062",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0062",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0062-300x225",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0062-300x225",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0063",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0063",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0064-768x768",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0064-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/curabitur-et-ligula/",
+    "project": "Curabitur Et Ligula"
+  },
+  {
+    "slug": "img-20231103-wa0064-960x750",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0064-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/happen/page/3/"
+  },
+  {
+    "slug": "img-20231103-wa0068",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0068",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0069",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0069",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/casfil/",
+    "project": "Casfil"
+  },
+  {
+    "slug": "img-20231103-wa0071",
+    "subject": "detail",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0071",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0072",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0072",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0073",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0073",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0075-2",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0075-2",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0078",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0078",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0079",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0079",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0080",
+    "subject": "booth_interior",
+    "quality": "social_only",
+    "src_base": "/images/portfolio/img-20231103-wa0080",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0081-768x768",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0081-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0081-960x750",
+    "subject": "booth_interior",
+    "quality": "social_only",
+    "src_base": "/images/portfolio/img-20231103-wa0081-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/happen/"
+  },
+  {
+    "slug": "img-20231103-wa0082",
+    "subject": "booth_interior",
+    "quality": "social_only",
+    "src_base": "/images/portfolio/img-20231103-wa0082",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0083",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0083",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0084",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0084",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
+  },
+  {
+    "slug": "img-20231103-wa0086",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0086",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vella-cafe/",
+    "project": "Vella Cafe"
+  },
+  {
+    "slug": "img-20231103-wa0087-1-768x768",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0087-1-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/bebuilder-2841/",
+    "project": "Bebuilder 2841"
   },
   {
     "slug": "img-20231103-wa0087-1-960x750",
@@ -179,7 +1239,217 @@
       1440,
       1920
     ],
-    "alt": "booth interior"
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/happen/"
+  },
+  {
+    "slug": "img-20231103-wa0088",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0088",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vella-cafe/",
+    "project": "Vella Cafe"
+  },
+  {
+    "slug": "img-20231103-wa0089",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0089",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vella-cafe/",
+    "project": "Vella Cafe"
+  },
+  {
+    "slug": "img-20231103-wa0106",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0106",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0107",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0107",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0108",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0108",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0109-1",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0109-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0109-768x768",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0109-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/vellila-group/",
+    "project": "Vellila Group"
+  },
+  {
+    "slug": "img-20231103-wa0109-960x750",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0109-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/happen/"
+  },
+  {
+    "slug": "img-20231103-wa0110",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0110",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0116",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0116",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0117",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0117",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0118",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0118",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/solana/",
+    "project": "Solana"
+  },
+  {
+    "slug": "img-20231103-wa0135",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0135",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/quisque-lorem-tortor/",
+    "project": "Quisque Lorem Tortor"
+  },
+  {
+    "slug": "img-20231103-wa0138-768x768",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0138-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/aliquam-eratac/",
+    "project": "Aliquam Eratac"
   },
   {
     "slug": "img-20231103-wa0138-960x750",
@@ -192,7 +1462,110 @@
       1440,
       1920
     ],
-    "alt": "booth interior"
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/happen/page/3/"
+  },
+  {
+    "slug": "img-20231103-wa0145",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0145",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/fidelidade/",
+    "project": "Fidelidade"
+  },
+  {
+    "slug": "img-20231103-wa0146-768x768",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0146-768x768",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/rubis-gas/",
+    "project": "Rubis Gas"
+  },
+  {
+    "slug": "img-20231103-wa0146-960x750",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0146-960x750",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/happen/"
+  },
+  {
+    "slug": "img-20231103-wa0147",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0147",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/fidelidade/",
+    "project": "Fidelidade"
+  },
+  {
+    "slug": "img-20231103-wa0149",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/img-20231103-wa0149",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/fidelidade/",
+    "project": "Fidelidade"
+  },
+  {
+    "slug": "impressao-2-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/impressao-2-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "isabel-vargas-3a-scaled-e1767722744805-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/isabel-vargas-3a-scaled-e1767722744805-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
   },
   {
     "slug": "logo-preto-p3",
@@ -205,20 +1578,179 @@
       1440,
       1920
     ],
-    "alt": "other"
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/"
   },
   {
-    "slug": "portugalia-2-1102x1200",
-    "subject": "booth_exterior",
+    "slug": "luso-1",
+    "subject": "other",
     "quality": "portfolio_grade",
-    "src_base": "/images/portfolio/portugalia-2-1102x1200",
+    "src_base": "/images/portfolio/luso-1",
     "widths": [
       640,
       960,
       1440,
       1920
     ],
-    "alt": "booth exterior"
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "luso-1-92x75",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/luso-1-92x75",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "oriflame-nos-alive-2019-1",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/oriflame-nos-alive-2019-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/oriflame/",
+    "project": "Oriflame"
+  },
+  {
+    "slug": "oriflame-nos-alive-2019-1-800x800",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/oriflame-nos-alive-2019-1-800x800",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/edp/",
+    "project": "Edp"
+  },
+  {
+    "slug": "paull-striker-150x60",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/paull-striker-150x60",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "pavilhao3-fachada-3-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pavilhao3-fachada-3-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "pavilhao3-fachada-3-scaled-e1766146505359",
+    "subject": "facility",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pavilhao3-fachada-3-scaled-e1766146505359",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/contatos/"
+  },
+  {
+    "slug": "pavilhao3-fachada-4-scaled-e1766158522357",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pavilhao3-fachada-4-scaled-e1766158522357",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/it/"
+  },
+  {
+    "slug": "pintura-outdoor-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pintura-outdoor-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "pintura-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pintura-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "polimento-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/polimento-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "portugalia-1",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/portugalia-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/portugalia/",
+    "project": "Portugalia"
   },
   {
     "slug": "portugalia-2-1280x1000",
@@ -231,7 +1763,121 @@
       1440,
       1920
     ],
-    "alt": "booth exterior"
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-types/lojas/"
+  },
+  {
+    "slug": "portugalia-2-800x800",
+    "subject": "booth_exterior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/portugalia-2-800x800",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth exterior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/iqos/",
+    "project": "Iqos"
+  },
+  {
+    "slug": "pradaxa-1",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pradaxa-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "pradaxa-1-150x56",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/pradaxa-1-150x56",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "rock-in-rio-1-78x75",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/rock-in-rio-1-78x75",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "rtp-1",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/rtp-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "sagres-1",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/sagres-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "sagres-1-95x75",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/sagres-1-95x75",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "sala-reunioes-2-scaled-e1766156669919-450x500",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/sala-reunioes-2-scaled-e1766156669919-450x500",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/make/"
   },
   {
     "slug": "serralharia-1-scaled-e1766158233379",
@@ -244,6 +1890,149 @@
       1440,
       1920
     ],
-    "alt": "detail"
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/"
+  },
+  {
+    "slug": "serralharia-3-scaled-e1766161828272-450x500",
+    "subject": "detail",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/serralharia-3-scaled-e1766161828272-450x500",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "serralharia-4-scaled",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/serralharia-4-scaled",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "sumol-compal-1",
+    "subject": "other",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/sumol-compal-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "other",
+    "source_page": "https://pavilhao3.com/make/"
+  },
+  {
+    "slug": "tabaqueira-boutique-chiado",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/tabaqueira-boutique-chiado",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/iqos/",
+    "project": "Iqos"
+  },
+  {
+    "slug": "tabaqueira-boutique-chiado-800x800",
+    "subject": "booth_interior",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/tabaqueira-boutique-chiado-800x800",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "booth interior",
+    "source_page": "https://pavilhao3.com/blog/portfolio-item/aliquam-eratac/",
+    "project": "Aliquam Eratac"
+  },
+  {
+    "slug": "vanda-nave-scaled-e1767722942436-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/vanda-nave-scaled-e1767722942436-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "vasco-branco-scaled-e1767722859265-1630x860",
+    "subject": "team",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/vasco-branco-scaled-e1767722859265-1630x860",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "team",
+    "source_page": "https://pavilhao3.com/we/"
+  },
+  {
+    "slug": "whatsapp-image-2023-10-31-at-09-48-19",
+    "subject": "facility",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/whatsapp-image-2023-10-31-at-09-48-19",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/pavilhao3-3/"
+  },
+  {
+    "slug": "whatsapp-image-2023-10-31-at-09-48-19-1",
+    "subject": "facility",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/whatsapp-image-2023-10-31-at-09-48-19-1",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/pavilhao3-3/"
+  },
+  {
+    "slug": "whatsapp-image-2023-10-31-at-09-48-20",
+    "subject": "facility",
+    "quality": "portfolio_grade",
+    "src_base": "/images/portfolio/whatsapp-image-2023-10-31-at-09-48-20",
+    "widths": [
+      640,
+      960,
+      1440,
+      1920
+    ],
+    "alt": "detail",
+    "source_page": "https://pavilhao3.com/pavilhao3-3/"
   }
 ]

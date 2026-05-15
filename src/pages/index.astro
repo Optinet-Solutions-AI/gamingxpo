@@ -13,7 +13,27 @@ import { getCollection } from 'astro:content';
 import portfolio from '../data/portfolio.json';
 
 const services = await getCollection('services');
-const featured = portfolio.filter(p => p.quality === 'portfolio_grade' && p.subject !== 'other').slice(0, 6);
+
+const DUMMY_PROJECTS = new Set([
+  'Bebuilder 2841', 'Quisque Lorem Tortor', 'Aliquam Eratac', 'Curabitur Et Ligula',
+]);
+
+// One feature card per real named client (first portfolio_grade booth photo we have)
+const seenProjects = new Set<string>();
+const featured = portfolio
+  .filter((p: any) =>
+    p.quality === 'portfolio_grade'
+    && (p.subject === 'booth_exterior' || p.subject === 'booth_interior')
+    && p.project
+    && !DUMMY_PROJECTS.has(p.project)
+  )
+  .filter((p: any) => {
+    if (seenProjects.has(p.project)) return false;
+    seenProjects.add(p.project);
+    return true;
+  })
+  .slice(0, 6);
+
 const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
 const serviceIcons: Record<string, string> = {
@@ -32,7 +52,7 @@ const serviceIcons: Record<string, string> = {
   <section class="bg-bg">
     <SectionHeader eyebrow="Selected work" title="Booths that earn the room." kicker="A small sample. Every booth we've built was custom-designed for the event, the brand, and the crowd in front of it." />
     <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
-      {featured.map(p => <CaseCard {...p} title={titleCase(p.subject)} event="iGaming event" year={2025} />)}
+      {featured.map((p: any) => <CaseCard {...p} title={p.project ?? titleCase(p.subject)} event="iGaming event" year={2025} />)}
     </div>
     <div class="max-w-layout mx-auto px-6 mt-12 mb-section text-center">
       <a href="/portfolio" class="inline-flex items-center gap-2 border border-ink/20 text-ink px-6 py-3 rounded-full hover:bg-ink hover:text-bg hover:border-ink transition-colors">

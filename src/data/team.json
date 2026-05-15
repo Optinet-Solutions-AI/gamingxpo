@@ -1,0 +1,62 @@
+[
+  {
+    "name": "André Silva",
+    "role": "CEO",
+    "bio": "Leads the company and the iGaming strategy. Put Gamingxpo on the SiGMA, ICE, and G2E floors.",
+    "src_base": "/images/portfolio/andre-maricato-silva-scaled-e1767723141172-1630x860"
+  },
+  {
+    "name": "Fátima Nunes",
+    "role": "Finance & HR",
+    "bio": "Runs operations, finance, and the people side of the business. Every invoice and every team member passes through her desk.",
+    "src_base": "/images/portfolio/fatima-nunes-scaled-e1767723056220-1630x860"
+  },
+  {
+    "name": "Alexandre Machado",
+    "role": "Account Manager",
+    "bio": "Senior account lead. Single point of contact for some of our largest iGaming clients across Europe and LATAM.",
+    "src_base": "/images/portfolio/alexandre-machado-2-site-scaled-e1767723164278-1630x860"
+  },
+  {
+    "name": "Carla Trapola",
+    "role": "Account Manager",
+    "bio": "Event-cycle specialist — the operators that show at three or four iGaming expos a year. Calendar planning is her game.",
+    "src_base": "/images/portfolio/carla-trapola-scaled-e1767723110395-1630x860"
+  },
+  {
+    "name": "Francisco Leitão",
+    "role": "Account Manager",
+    "bio": "Brings deep production knowledge to the client-facing side. Ask 'can we build that?' and he answers honestly.",
+    "src_base": "/images/portfolio/francisco-leitao-scaled-e1767723030704-1630x860"
+  },
+  {
+    "name": "Vanda Nave",
+    "role": "Production",
+    "bio": "Production lead. Translates renders into joinery, hardware, and logistics. Knows every supplier and every shortcut.",
+    "src_base": "/images/portfolio/vanda-nave-scaled-e1767722942436-1630x860"
+  },
+  {
+    "name": "Eliana Rodrigues",
+    "role": "Production",
+    "bio": "Workshop production. Drives the build calendar from first cut to crating. Nothing ships late on her watch.",
+    "src_base": "/images/portfolio/eliana-rodrigues-scaled-e1767723083506-1630x860"
+  },
+  {
+    "name": "Isabel Vargas",
+    "role": "Designer",
+    "bio": "Designer focused on space + material storytelling. The booth that feels coherent up close is usually her layout call.",
+    "src_base": "/images/portfolio/isabel-vargas-3a-scaled-e1767722744805-1630x860"
+  },
+  {
+    "name": "Vasco Branco",
+    "role": "Designer",
+    "bio": "Lead designer. Renders the booth that closes the deal. Specialises in iGaming brand-system translations to physical environments.",
+    "src_base": "/images/portfolio/vasco-branco-scaled-e1767722859265-1630x860"
+  },
+  {
+    "name": "Giovanna Laurito",
+    "role": "Designer",
+    "bio": "Designer with a strong typography and signage focus. The 30-metre brand-read on every booth is mostly her doing.",
+    "src_base": "/images/portfolio/giovanna-laurito-scaled-e1767722996892-1630x860"
+  }
+]

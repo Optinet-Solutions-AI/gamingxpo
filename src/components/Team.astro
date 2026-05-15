@@ -1,30 +1,7 @@
 ---
-const { items = [
-  {
-    name: 'Tiago Mendes',
-    role: 'Founder & Creative Director',
-    bio: '12 years building stands across Europe. Before Gamingxpo, ran an event architecture studio that won three SiGMA design awards.',
-    photo: 'https://i.pravatar.cc/600?img=68',
-  },
-  {
-    name: 'Inês Cordeiro',
-    role: 'Head of Production',
-    bio: 'Runs the workshop. Carpenter by trade, certified rigger, has personally hung every truss on every Gamingxpo build for the past four years.',
-    photo: 'https://i.pravatar.cc/600?img=44',
-  },
-  {
-    name: 'Bruno Aguiar',
-    role: 'On-Site Lead',
-    bio: 'Speaks four languages. Built booths in 14 countries. The person you actually want on the show floor at 3am when something needs rebuilding.',
-    photo: 'https://i.pravatar.cc/600?img=33',
-  },
-  {
-    name: 'Carla Pinto',
-    role: 'Account & Project Lead',
-    bio: 'The single point of contact for every project. Eight years in iGaming event production. Knows every venue rulebook by heart.',
-    photo: 'https://i.pravatar.cc/600?img=49',
-  },
-] } = Astro.props;
+import team from '../data/team.json';
+const { items = team, limit } = Astro.props;
+const list = limit ? items.slice(0, limit) : items;
 ---
 <section class="bg-bg-alt border-y border-line">
   <div class="max-w-layout mx-auto px-6 py-section">
@@ -34,27 +11,39 @@ const { items = [
           <span class="w-6 h-px bg-accent"></span>
           The crew
         </p>
-        <h2 class="font-display text-display-lg mt-4 text-ink">Four people you'll actually meet.</h2>
+        <h2 class="font-display text-display-lg mt-4 text-ink">The people you'll actually meet.</h2>
       </div>
       <p class="md:col-span-6 md:col-start-7 text-body text-fg/70 max-w-prose">
-        No army of junior account handlers. The people you see here are the people who design,
-        build, and run every Gamingxpo booth. One project, one team — start to teardown.
+        No army of junior account handlers. Every Gamingxpo booth is designed, produced, and
+        run on-site by the people on this page. One project, one team — start to teardown.
       </p>
     </header>
 
-    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-      {items.map((p: any) => (
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-5">
+      {list.map((p: { name: string; role: string; bio: string; src_base: string }) => (
         <article class="group relative overflow-hidden rounded-2xl bg-bg">
-          <div class="aspect-square overflow-hidden">
-            <img src={p.photo} alt={p.name} class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+          <div class="aspect-[4/5] overflow-hidden">
+            <picture>
+              <source type="image/avif" srcset={`${p.src_base}/640.avif 640w, ${p.src_base}/960.avif 960w`} sizes="(min-width: 1280px) 18vw, (min-width: 768px) 33vw, 50vw" />
+              <img
+                src={`${p.src_base}/640.webp`}
+                alt={p.name}
+                class="w-full h-full object-cover grayscale-[0.15] transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                loading="lazy"
+              />
+            </picture>
           </div>
-          <div class="p-5">
-            <div class="text-ink font-display text-lg leading-tight">{p.name}</div>
-            <div class="text-accent text-xs tracking-wide uppercase font-medium mt-1">{p.role}</div>
-            <p class="text-muted text-sm mt-3 leading-relaxed">{p.bio}</p>
+          <div class="p-4 lg:p-5">
+            <div class="text-ink font-display text-base lg:text-lg leading-tight">{p.name}</div>
+            <div class="text-accent text-[0.7rem] tracking-wider uppercase font-medium mt-1">{p.role}</div>
+            <p class="text-muted text-xs mt-2 leading-relaxed">{p.bio}</p>
           </div>
         </article>
       ))}
     </div>
+
+    <p class="text-xs text-muted mt-8 text-center">
+      Headshots from the Gamingxpo team page. <a href="https://pavilhao3.com/we/" class="hover:text-ink underline underline-offset-4">See the full team →</a>
+    </p>
   </div>
 </section>

@@ -1,7 +1,16 @@
 ---
 import portfolio from '../data/portfolio.json';
-const grade = portfolio.filter(p => p.quality === 'portfolio_grade' && p.subject !== 'other');
-const cover = grade.find(p => p.subject === 'booth_exterior') ?? grade[0];
+
+const DUMMY_PROJECTS = new Set([
+  'Bebuilder 2841', 'Quisque Lorem Tortor', 'Aliquam Eratac', 'Curabitur Et Ligula',
+]);
+
+const grade = portfolio.filter((p: any) =>
+  p.quality === 'portfolio_grade'
+  && (p.subject === 'booth_exterior' || p.subject === 'booth_interior')
+  && !DUMMY_PROJECTS.has(p.project ?? '')
+);
+const cover = grade.find((p: any) => p.subject === 'booth_exterior') ?? grade[0];
 const sideA = grade[1] ?? cover;
 const sideB = grade[2] ?? sideA;
 const sideC = grade[3] ?? sideA;

@@ -5,22 +5,58 @@ import CaseCard from '../components/CaseCard.astro';
 import FilterBar from '../components/FilterBar.astro';
 import portfolio from '../data/portfolio.json';
 
-const items = portfolio.filter(p => p.quality !== 'reject' && p.subject !== 'other');
+// Lorem-ipsum dummy projects from the WordPress theme — filter out
+const DUMMY_PROJECTS = new Set([
+  'Bebuilder 2841',
+  'Quisque Lorem Tortor',
+  'Aliquam Eratac',
+  'Curabitur Et Ligula',
+]);
+
+// Only real booth photos (exclude team/facility/other) and real named projects
+const items = portfolio.filter((p: any) =>
+  p.quality !== 'reject'
+  && p.subject !== 'team'
+  && p.subject !== 'facility'
+  && p.subject !== 'other'
+  && !DUMMY_PROJECTS.has(p.project ?? '')
+);
+
 const titleCase = (s: string) => s.replace(/[_-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
-// Categorize by subject for filter chips
-const subjects = Array.from(new Set(items.map(p => p.subject))).sort();
+// Filter chips: by project (named clients) and by subject (interior/exterior)
+const projects = Array.from(new Set(items.map((p: any) => p.project).filter(Boolean))).sort() as string[];
+const subjects = Array.from(new Set(items.map((p: any) => p.subject))).sort() as string[];
 ---
-<Base title="Portfolio — Gamingxpo" description="Selected work: booths and stands we've built for iGaming clients across Europe and LATAM.">
-  <SectionHeader eyebrow="Portfolio" title="The room, the booth, the brand." kicker="Filter by subject below. Every project tells the same story differently: the brand had a moment to be unmissable, and we built that moment." />
+<Base
+  title="Portfolio — Gamingxpo"
+  description="Selected work: booths and stands we've built for iGaming clients across Europe and LATAM."
+>
+  <SectionHeader
+    eyebrow="Portfolio"
+    title="The booth that won the room."
+    kicker="Filter by client or by view. Every project here was designed, built, and shipped end-to-end by the in-house Gamingxpo team."
+  />
+
   <FilterBar groups={[
-    {name:'Subject', key:'subject', options:subjects.map(titleCase)},
+    { name: 'Client', key: 'project', options: projects },
+    { name: 'View', key: 'subject', options: subjects.map(titleCase) },
   ]} />
+
   <div class="max-w-layout mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-section">
-    {items.map(p => (
-      <div data-card data-subject={titleCase(p.subject)}>
-        <CaseCard {...p} title={titleCase(p.subject)} event="iGaming event" year={2025} />
+    {items.map((p: any) => (
+      <div data-card data-project={p.project ?? '—'} data-subject={titleCase(p.subject)}>
+        <CaseCard
+          {...p}
+          title={p.project ?? titleCase(p.subject)}
+          event={p.project ? titleCase(p.subject) : 'iGaming event'}
+          year={2025}
+        />
       </div>
     ))}
   </div>
+
+  <p class="max-w-layout mx-auto px-6 pb-section text-sm text-muted">
+    Showing <strong class="text-ink">{items.length}</strong> projects across {projects.length} clients.
+  </p>
 </Base>
