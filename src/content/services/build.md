@@ -9,7 +9,7 @@ deliverables:
   - Pre-build dry-run before ship
 ---
 Subcontractor chains are where booth budgets disappear. We don't have one. The structural frame,
-the wall panels, the joinery, the floor — all built in our Lisbon workshop by people on the
+the wall panels, the joinery, the floor - all built in our Lisbon workshop by people on the
 Gamingxpo payroll. The booth gets fully assembled in the workshop, photographed, then disassembled
 and crated for shipping. By the time it lands at SiGMA or G2E, every joint has been seated twice.
 

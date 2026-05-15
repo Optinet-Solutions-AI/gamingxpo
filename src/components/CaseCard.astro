@@ -10,7 +10,7 @@ const { slug, title, event, year, src_base, alt } = Astro.props;
   </div>
   <div class="pt-4 flex items-start justify-between gap-4">
     <div>
-      <div class="text-xs text-muted uppercase tracking-widest">{event ?? '—'} · {year ?? ''}</div>
+      <div class="text-xs text-muted uppercase tracking-widest">{event ?? '-'} · {year ?? ''}</div>
       <div class="text-display-md font-display mt-1 text-ink group-hover:text-coral transition-colors">{title ?? alt}</div>
     </div>
     <span class="shrink-0 inline-flex items-center justify-center w-9 h-9 rounded-full border border-line group-hover:bg-ink group-hover:border-ink group-hover:text-bg transition-colors text-ink">

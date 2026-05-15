@@ -10,7 +10,7 @@ deliverables:
 ---
 A booth at SiGMA has about three seconds to be unmissable from across the hall. That distance
 is where every typographic and material decision is judged. We design the brand hits to land
-at 30m and 3m simultaneously — the wall reads first, the close-in detail rewards a longer look.
+at 30m and 3m simultaneously - the wall reads first, the close-in detail rewards a longer look.
 
 If you don't have an existing brand spec for events, we build one. It becomes your reusable
 rulebook so the next builder (us or anyone else) lands the same way.

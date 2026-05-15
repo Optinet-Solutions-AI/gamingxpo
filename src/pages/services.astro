@@ -2,31 +2,102 @@
 import Base from '../layouts/Base.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import ContactSplit from '../components/ContactSplit.astro';
+import portfolio from '../data/portfolio.json';
 import { getCollection } from 'astro:content';
 
 const services = await getCollection('services');
----
-<Base title="Services — Gamingxpo" description="Design, build, branding, AV, and on-site assembly for iGaming event booths. End-to-end, one in-house team.">
-  <SectionHeader eyebrow="Services" title="From concept to teardown." kicker="Five disciplines. One in-house team. Every booth shipped on the date written on the contract." />
 
-  <div class="max-w-layout mx-auto px-6 space-y-section pb-section">
-    {services.map(async (s) => {
+// Map service slug -> portfolio image src_base
+const findImg = (slugMatch: string) => {
+  const hit = (portfolio as any[]).find(p => p.slug === slugMatch);
+  return hit ? hit.src_base : null;
+};
+const findFirstByPredicate = (pred: (p: any) => boolean) => {
+  const hit = (portfolio as any[]).find(pred);
+  return hit ? hit.src_base : null;
+};
+
+const serviceImages: Record<string, string | null> = {
+  'design':   findImg('andre-e-alexandre-office-1-scaled'),
+  'build':    findImg('serralharia-4-scaled') ?? findImg('polimento-scaled'),
+  'branding': findImg('impressao-2-scaled') ?? findImg('pintura-scaled'),
+  'av-tech':  findFirstByPredicate(p => p.project === 'Solana' && p.subject === 'booth_interior')
+              ?? findFirstByPredicate(p => p.subject === 'booth_interior'),
+  'on-site':  findFirstByPredicate(p => p.project === 'Vellila Group' && p.subject === 'booth_exterior')
+              ?? findFirstByPredicate(p => p.subject === 'booth_exterior'),
+};
+
+const serviceIcons: Record<string, string> = {
+  'design':   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>',
+  'build':    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+  'branding': '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>',
+  'av-tech':  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>',
+  'on-site':  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.5-4 7-7 4 4-7 7L4 22"/><path d="M14.5 5.5l4 4"/><path d="M19 2l3 3-2.5 2.5-3-3z"/></svg>',
+};
+
+const order = ['design', 'build', 'branding', 'av-tech', 'on-site'];
+const orderedServices = order
+  .map(slug => services.find(s => s.slug === slug))
+  .filter(Boolean) as typeof services;
+
+const stepNumbers = ['01', '02', '03', '04', '05'];
+---
+<Base
+  title="Services - Gamingxpo"
+  description="Design, build, branding, AV, and on-site assembly for iGaming event booths. End-to-end, one in-house team."
+>
+  <SectionHeader
+    eyebrow="Services"
+    title="From concept to teardown."
+    kicker="Five disciplines. One in-house team. Every booth shipped on the date written on the contract."
+  />
+
+  <div class="max-w-layout mx-auto px-6 pb-section">
+    {orderedServices.map(async (s, i) => {
       const { Content } = await s.render();
+      const img = serviceImages[s.slug];
+      const isReversed = i % 2 === 1;
       return (
-        <article id={s.slug} class="grid md:grid-cols-12 gap-8 border-t border-line pt-12 scroll-mt-24">
-          <div class="md:col-span-4">
-            <p class="inline-flex items-center gap-2 text-accent text-xs tracking-[0.25em] uppercase font-medium">
+        <article
+          id={s.slug}
+          class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-center scroll-mt-24 py-section border-t border-line"
+        >
+          {/* Image column */}
+          <div class={`lg:col-span-6 ${isReversed ? 'lg:col-start-7 lg:row-start-1' : ''}`}>
+            <div class="relative aspect-[4/3] rounded-2xl overflow-hidden bg-line">
+              {img ? (
+                <picture>
+                  <source type="image/avif" srcset={`${img}/640.avif 640w, ${img}/960.avif 960w, ${img}/1440.avif 1440w`} sizes="(min-width: 1024px) 50vw, 100vw" />
+                  <img src={`${img}/960.webp`} alt={s.data.title} class="w-full h-full object-cover" loading="lazy" />
+                </picture>
+              ) : (
+                <div class="w-full h-full bg-gradient-to-br from-bg to-bg-alt"></div>
+              )}
+              <div class="absolute top-4 left-4 bg-bg-alt/90 backdrop-blur px-3 py-1.5 rounded-full text-xs font-medium text-ink tracking-wider">
+                STEP {stepNumbers[i]}
+              </div>
+              <div class="absolute bottom-4 right-4 w-14 h-14 rounded-full bg-bg-alt/95 backdrop-blur flex items-center justify-center text-ink">
+                <span class="block w-7 h-7" set:html={serviceIcons[s.slug] ?? serviceIcons['design']}></span>
+              </div>
+            </div>
+          </div>
+
+          {/* Text column */}
+          <div class={`lg:col-span-5 ${isReversed ? 'lg:col-start-1 lg:row-start-1' : 'lg:col-start-8'}`}>
+            <p class="inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase font-medium text-fg/70">
               <span class="w-6 h-px bg-accent"></span>
               {s.data.title}
             </p>
-          </div>
-          <div class="md:col-span-8 max-w-prose">
-            <h2 class="font-display text-display-lg text-ink">{s.data.intro}</h2>
-            <div class="mt-6 prose text-fg/80 prose-headings:text-ink prose-p:text-fg/80"><Content /></div>
-            <ul class="mt-8 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+            <h2 class="font-display text-display-lg mt-4 text-ink">{s.data.intro}</h2>
+            <div class="mt-5 prose prose-invert text-fg/80 max-w-prose">
+              <Content />
+            </div>
+            <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm text-muted">
               {s.data.deliverables.map((d: string) => (
-                <li class="flex items-start gap-2 text-fg/80">
-                  <span class="text-accent mt-1">→</span>
+                <li class="flex items-start gap-2">
+                  <span class="text-accent mt-1.5 shrink-0">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </span>
                   <span>{d}</span>
                 </li>
               ))}

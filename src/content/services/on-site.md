@@ -13,5 +13,5 @@ the freight check-in, run the build crew, and handle every venue rule from riggi
 to fire-marshal sign-off. Your marketing team should be writing pitch decks, not arguing with
 a German hall foreman.
 
-If something breaks mid-show — a graphic gets ripped, a hinge fails, a screen dies — we fix
+If something breaks mid-show - a graphic gets ripped, a hinge fails, a screen dies - we fix
 it on-floor inside two hours. We keep a vehicle parked at every venue stocked with spares.

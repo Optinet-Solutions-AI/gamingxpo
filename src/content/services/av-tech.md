@@ -1,6 +1,6 @@
 ---
 title: AV & Tech
-intro: Screens, slot demos, live data walls — we supply, install, and run it.
+intro: Screens, slot demos, live data walls - we supply, install, and run it.
 deliverables:
   - LED video walls up to 6m × 2.5m
   - Touchscreen demo pods & interactive games
