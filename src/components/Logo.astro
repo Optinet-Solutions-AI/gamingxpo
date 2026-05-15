@@ -1,30 +1,62 @@
 ---
-const { size = 32, withWordmark = true, className = '' } = Astro.props;
+/**
+ * Gamingxpo logo: "X-mark booth corner."
+ * Two crossing beams (ink + amber) inside a rounded-square frame. The X reads
+ * as both the letter from the wordmark and an architectural corner detail.
+ *
+ * Props:
+ *   size         — px size of the mark (default 32)
+ *   withWordmark — also render the "GamingXpo." text (default true)
+ *   variant      — 'ink' (default) for light backgrounds | 'bg' for dark sections (footer)
+ */
+const { size = 32, withWordmark = true, variant = 'ink', className = '' } = Astro.props;
+
+const onDark = variant === 'bg';
+// Mark backdrop fill + the two beams' colors
+const backdrop = onDark ? 'var(--bg-alt, #FFFFFF)' : 'var(--ink, #1A1A1A)';
+const beamA = onDark ? 'var(--ink, #1A1A1A)' : 'var(--accent, #F5C84B)';
+const beamB = onDark ? 'var(--accent, #F5C84B)' : 'var(--bg, #F7F4EF)';
 ---
-<a href="/" class={`inline-flex items-center gap-2.5 group ${className}`} aria-label="Gamingxpo home">
+<a
+  href="/"
+  class={`inline-flex items-center gap-2.5 group ${className}`}
+  aria-label="Gamingxpo home"
+>
   <svg
     width={size}
     height={size}
     viewBox="0 0 64 64"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    class="shrink-0 transition-transform duration-300 group-hover:rotate-[12deg]"
+    class="shrink-0 transition-transform duration-500 group-hover:rotate-[8deg] group-hover:scale-105"
     aria-hidden="true"
   >
-    <defs>
-      <linearGradient id="gxFill" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-        <stop offset="0" stop-color="currentColor" />
-        <stop offset="1" stop-color="currentColor" stop-opacity="0.85" />
-      </linearGradient>
-    </defs>
-    {/* angled booth-cube monogram */}
-    <path d="M14 8 L50 8 L56 14 L56 50 L50 56 L14 56 L8 50 L8 14 Z" fill="url(#gxFill)" />
-    <path d="M32 18 L46 32 L32 46 L18 32 Z" fill="var(--bg)" opacity="0.85" />
-    <circle cx="32" cy="32" r="3.5" fill="currentColor" />
+    {/* rounded square backdrop */}
+    <rect width="64" height="64" rx="14" fill={backdrop} />
+
+    {/* X built from two crossed beams - beam A goes UNDER, beam B goes OVER at intersection */}
+    {/* Beam A (amber on ink): top-left to bottom-right - drawn first so beam B paints over its center */}
+    <path
+      d="M 16 16 L 48 48"
+      stroke={beamA}
+      stroke-width="9"
+      stroke-linecap="round"
+    />
+    {/* Beam B (cream on ink): top-right to bottom-left - drawn second, sits on top */}
+    <path
+      d="M 48 16 L 16 48"
+      stroke={beamB}
+      stroke-width="9"
+      stroke-linecap="round"
+    />
+
+    {/* small accent notch at top-right of frame for "stamp" feel */}
+    <rect x="54" y="6" width="4" height="4" rx="1" fill={beamA} opacity="0.85" />
   </svg>
+
   {withWordmark && (
-    <span class="font-display font-semibold tracking-tight text-[1.15rem] leading-none">
-      Gamingxpo<span class="text-accent">.</span>
+    <span class={`font-display font-semibold tracking-tight text-[1.2rem] leading-none ${onDark ? 'text-bg' : 'text-fg'}`}>
+      Gaming<span class="text-accent">X</span>po<span class="text-accent">.</span>
     </span>
   )}
 </a>
