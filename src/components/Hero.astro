@@ -22,23 +22,49 @@ const {
 } = Astro.props;
 ---
 <section class="relative bg-ink text-bg overflow-hidden">
-  <div class="absolute inset-0 bg-grain opacity-[0.06] pointer-events-none" aria-hidden="true"></div>
+  {cover && (
+    <picture>
+      <source
+        type="image/avif"
+        srcset={`${cover.src_base}/960.avif 960w, ${cover.src_base}/1440.avif 1440w, ${cover.src_base}/1920.avif 1920w`}
+        sizes="100vw"
+      />
+      <source
+        type="image/webp"
+        srcset={`${cover.src_base}/960.webp 960w, ${cover.src_base}/1440.webp 1440w, ${cover.src_base}/1920.webp 1920w`}
+        sizes="100vw"
+      />
+      <img
+        src={`${cover.src_base}/1920.webp`}
+        alt={cover.alt}
+        class="absolute inset-0 w-full h-full object-cover motion-safe:animate-[kenburns_28s_ease-out_infinite_alternate]"
+        width="1920"
+        height="1080"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </picture>
+  )}
+  {/* Layered gradient overlay: strong dark on the left for text legibility, fades right to let the image breathe */}
+  <div class="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/75 to-ink/40 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-ink/40 via-transparent to-ink/60 pointer-events-none" aria-hidden="true"></div>
+  <div class="absolute inset-0 bg-grain opacity-[0.05] pointer-events-none" aria-hidden="true"></div>
 
-  <div class="relative max-w-layout mx-auto px-6 pt-16 pb-16 lg:pt-20 lg:pb-24 grid lg:grid-cols-12 gap-12 items-center">
-    <div class="lg:col-span-5">
+  <div class="relative max-w-layout mx-auto px-6 pt-24 pb-24 lg:pt-32 lg:pb-36 min-h-[640px] flex items-center">
+    <div class="max-w-[640px]">
       <p class="text-accent text-xs tracking-[0.25em] uppercase font-medium">{eyebrow}</p>
-      <h1 class="font-display text-display-lg text-bg mt-5 max-w-[22ch] leading-[1.02]">{headline}</h1>
-      <p class="mt-5 max-w-prose text-bg/70 text-body">{sub}</p>
+      <h1 class="font-display text-display-xl text-bg mt-5 max-w-[18ch] leading-[1.0]">{headline}</h1>
+      <p class="mt-6 max-w-prose text-bg/80 text-body">{sub}</p>
       <div class="mt-8 flex flex-wrap gap-3">
         <a href={cta.href} class="inline-flex items-center gap-2 bg-accent text-ink font-medium px-7 py-3.5 rounded-full hover:bg-accent-dim hover:text-bg transition-colors">
           {cta.label}
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4l-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
-        <a href={secondary.href} class="inline-flex items-center gap-2 border border-bg/25 text-bg px-7 py-3.5 rounded-full hover:bg-bg/10 hover:border-bg/40 transition-colors">
+        <a href={secondary.href} class="inline-flex items-center gap-2 bg-bg/10 backdrop-blur-sm border border-bg/30 text-bg px-7 py-3.5 rounded-full hover:bg-bg/20 hover:border-bg/50 transition-colors">
           {secondary.label}
         </a>
       </div>
-      <div class="mt-10 flex items-center gap-5 text-xs text-bg/55">
+      <div class="mt-10 flex items-center gap-5 text-xs text-bg/70">
         <div class="flex -space-x-2">
           {avatars.map(p => (
             <img src={`${p.src_base}/640.webp`} alt="" width="32" height="32" class="w-8 h-8 rounded-full border-2 border-ink object-cover" loading="lazy" />
@@ -46,33 +72,6 @@ const {
         </div>
         <span class="tracking-wide">200+ booths shipped across 14 countries</span>
       </div>
-    </div>
-
-    <div class="lg:col-span-7">
-      {cover && (
-        <picture>
-          <source
-            type="image/avif"
-            srcset={`${cover.src_base}/960.avif 960w, ${cover.src_base}/1440.avif 1440w, ${cover.src_base}/1920.avif 1920w`}
-            sizes="(min-width: 1024px) 58vw, 100vw"
-          />
-          <source
-            type="image/webp"
-            srcset={`${cover.src_base}/960.webp 960w, ${cover.src_base}/1440.webp 1440w, ${cover.src_base}/1920.webp 1920w`}
-            sizes="(min-width: 1024px) 58vw, 100vw"
-          />
-          <img
-            src={`${cover.src_base}/1440.webp`}
-            alt={cover.alt}
-            class="w-full rounded-2xl object-cover bg-fg/40 motion-safe:animate-[kenburns_24s_ease-out_infinite_alternate]"
-            style="height: clamp(320px, 56vh, 560px);"
-            width="1920"
-            height="1080"
-            loading="eager"
-            fetchpriority="high"
-          />
-        </picture>
-      )}
     </div>
   </div>
 
